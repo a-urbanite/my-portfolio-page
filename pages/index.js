@@ -2,7 +2,7 @@
 // import Image from 'next/image'
 // import styles from '../styles/Home.module.css'
 import Header from '../components/Header/Header'
-import Projects from '../components/Projects/projects'
+import Projects from '../components/Projects/Projects'
 
 export default function Home() {
   return (
