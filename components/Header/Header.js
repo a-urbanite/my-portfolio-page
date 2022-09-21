@@ -7,11 +7,12 @@ const Header = () => {
   return (
     <div className={styles.container}>
       <div className={styles.textBlock}> 
-        <p>Hello, I am</p>
-        <p>Alexander Städtler</p>
-        <p>Fullstack Webdeveloper</p>
+        <h2 className={styles.subTitle}><hr className={styles.horizontalLine}/>Hello, I am</h2>
+        <h1 className={styles.mainTitle}>Alexander Städtler</h1>
+        <h2 className={styles.subTitle}><span className={styles.animatedJobTitles}></span></h2>
+          
         {/* <span className={styles.downloadCV}>Download CV</span> */}
-        <AnimatedButton>assdsa</AnimatedButton>
+        <AnimatedButton text={'Download CV'}></AnimatedButton>
       </div>
       <div className={styles.imageBlock}>
         <Image 

@@ -1,21 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:100&display=swap');
+@use 'styles/index.scss' as *;
 
 .container {
-  width: 400px;
-  height: 400px;
-  position: relative;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // position: inherit;
 }
 
-.center {
+.wrapper {
   width: 180px;
   height: 60px;
-  position: absolute;
+  // position: absolute;
 }
 
 .btn {
@@ -23,25 +15,36 @@
   height: 60px;
   cursor: pointer;
   background: transparent;
-  border: 1px solid #91C9FF;
+  border: 2px solid $interactivePink;
   outline: none;
   transition: 1s ease-in-out;
 }
 
+.btnText {
+  position: relative;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 6px;
+  font-size: large;
+  color: white;
+}
+
 .anim {
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: relative;
+  left: -2px;
+  top: -62px;
   fill: none;
   stroke: #fff;
   stroke-dasharray: 150 480;
   stroke-dashoffset: 150;
-  transition: 1s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
 .btn:hover {
-  transition: 1s ease-in-out;
-  background: #4F95DA;
+  transition: 0.4s ease-in-out;
+  background: #3d677c;
 }
 
 .btn:hover svg {

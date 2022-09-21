@@ -1,0 +1,12 @@
+@use 'styles/index.scss' as *;
+
+.container {
+  @include main-section;
+  background-color: rgb(46, 23, 100);
+}
+
+.innerCont {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+}
