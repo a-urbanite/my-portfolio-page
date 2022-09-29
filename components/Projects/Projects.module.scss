@@ -2,11 +2,37 @@
 
 .container {
   @include main-section;
-  background-color: rgb(46, 23, 100);
+  // rgb(46, 23, 100)
+  // background-color: black;
+  padding: 0;
 }
 
-.innerCont {
+.header {
+  height: 100%;
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $midnightBlue;
+  // text-orientation: mixed;
+}
+
+.verticalTitle {
+  // margin: auto;
+  // writing-mode: vertical-rl;
+  text-transform: uppercase;
+  transform: rotate(270deg);
+  font-size: 3rem;
+  letter-spacing: 0.3em;
+  color: $bonemarrow;
+}
+
+.gallery {
   background-color: black;
   height: 100%;
-  width: 100%;
+  width: 85%;
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }

@@ -1,0 +1,41 @@
+@use 'styles/index.scss' as *;
+
+.cardContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  height: calc(100% * (1/2) - 10px);
+  width: calc(100% * (1/3) - 10px);
+}
+
+.textBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: justify;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  opacity: 0;
+  position: relative;
+  height: 15rem; 
+  width: 15rem;
+  padding: 10px;
+  background-color: $interactivePink;
+  &:hover {
+    // color:yellow;
+    transition: opacity 0.3s;  
+    opacity: 0.95;
+    // display: block;
+    // background-color: red;
+    cursor: pointer;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}

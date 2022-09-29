@@ -17,11 +17,13 @@
 }
 
 .subTitle {
-  font-size: 2.5rem;
+  font-size: 2rem;
+  color: $bonemarrow;
 }
 
 .mainTitle {
   font-size: 3.5rem;
+  color: $bonemarrow;
 }
 
 .downloadCV {
@@ -39,7 +41,7 @@
   height: 100%;
   width: 100%;
   padding: 3rem;
-  background-color: yellow;
+  // background-color: yellow;
   position: relative
 }
 
@@ -68,15 +70,11 @@
 
 @keyframes animateJobTitles {
   
-  25% {
+  33% {
       content: "UX/UI Designer";
   }
 
-  50% {
-      content: "Solution Architect";
-  }
-
-  75% {
+  66% {
       content: "Archaeologist";
   }
 }

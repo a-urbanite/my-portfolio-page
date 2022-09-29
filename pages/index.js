@@ -1,14 +1,32 @@
-// import Head from 'next/head'
-// import Image from 'next/image'
-// import styles from '../styles/Home.module.css'
 import Header from '../components/Header/Header'
 import Projects from '../components/Projects/Projects'
+import contentfulClient from "../contentfulClient";
 
-export default function Home() {
+export async function getStaticProps() {
+  const projectsFetch = contentfulClient.getEntries({
+    content_type: "portfolioProject",
+  });
+
+  const [projects] =
+    await Promise.all([
+      projectsFetch
+    ]);
+
+  return {
+    props: {
+      projects: projects.items,
+    },
+  };
+}
+
+export default function Home({projects}) {
+
+  // console.log(projects)
+
   return (
     <div >
       <Header></Header>
-      <Projects></Projects>
+      <Projects projects={projects}></Projects>
     </div>
   )
 }
