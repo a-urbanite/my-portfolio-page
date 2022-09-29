@@ -7,25 +7,31 @@ export async function getStaticProps() {
     content_type: "portfolioProject",
   });
 
-  const [projects] =
+  const profilePicFetch = contentfulClient.getEntries({
+    content_type: "profilePic",
+  });
+
+  const [projects, profilePic] =
     await Promise.all([
-      projectsFetch
+      projectsFetch,
+      profilePicFetch
     ]);
 
   return {
     props: {
       projects: projects.items,
+      profilePic: profilePic.items
     },
   };
 }
 
-export default function Home({projects}) {
+export default function Home({projects, profilePic}) {
 
   // console.log(projects)
 
   return (
     <div >
-      <Header></Header>
+      <Header profilePic={profilePic[0]}></Header>
       <Projects projects={projects}></Projects>
     </div>
   )

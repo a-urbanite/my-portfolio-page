@@ -3,7 +3,8 @@ import React from 'react'
 import styles from './Header.module.scss'
 import AnimatedButton from '../AnimatedButton/AnimatedButton'
 
-const Header = () => {
+const Header = ({profilePic}) => {
+
   return (
     <div className={styles.container}>
       <div className={styles.textBlock}> 
@@ -16,7 +17,7 @@ const Header = () => {
       </div>
       <div className={styles.imageBlock}>
         <Image 
-          src='/profile_pic.png'
+          src={`https:${profilePic.fields.profilePic.fields.file.url}`}
           alt='profile_pic'       
           layout='fill'
           objectFit='cover'

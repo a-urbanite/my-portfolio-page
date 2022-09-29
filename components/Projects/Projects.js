@@ -3,7 +3,6 @@ import ProjectCard from '../ProjectCard/ProjectCard'
 import styles from './Projects.module.scss'
 
 const Projects = ({projects}) => {
-console.log("inside projects comp", projects)
 
   return (
     <div className={styles.container}>
