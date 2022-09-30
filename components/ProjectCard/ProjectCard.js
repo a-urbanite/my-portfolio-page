@@ -7,7 +7,7 @@ const ProjectCard = ({project}) => {
 const imgUrl = `https:${project.fields.projectBanner.fields.file.url}`
 
   return (
-    <div className={styles.cardContainer}>
+    <div key={Math.random()} className={styles.cardContainer}>
         <Image className={styles.banner} src={imgUrl} alt={project.fields.projectBanner.fields.file.fileName} layout='fill' ></Image>
         <Tilt>
           <div className={styles.textBox}>

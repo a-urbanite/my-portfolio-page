@@ -2,10 +2,6 @@ import React from 'react'
 import styles from './AnimatedButton.module.scss'
 
 const AnimatedButton = ({text, url}) => {
-  console.log(url)
-  const downloadFile = () => {
-    window.location.href = {url}
-  }
 
   return (
     <div className={styles.container}>

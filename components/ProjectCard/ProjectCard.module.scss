@@ -1,6 +1,25 @@
 @use 'styles/index.scss' as *;
 
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@mixin randomisedAnimDelay {
+  @for $i from 1 through 100 {
+    &:nth-of-type(#{$i}) {
+      // animation: 3s intro infinite;
+      // transition-delay: #{$i}s;
+      // transition: all .2s #{$i * .1}s ease-in;
+      // animation-delay:  random(300) + ms;
+      animation-duration: random(2000) + ms; /* the duration of the animation */
+    }
+  }
+}
+
 .cardContainer {
+  @include randomisedAnimDelay;
+  user-select: none;
   position: relative;
   display: flex;
   align-items: center;
@@ -8,7 +27,21 @@
   margin: 5px;
   height: calc(100% * (1/2) - 10px);
   width: calc(100% * (1/3) - 10px);
-}
+
+    // animation: 1s ease-out 0s 1 fadeIn;
+
+    animation-name: fadeIn; /* the name of the animation we defined above */
+    animation-timing-function: ease-out; /* how the animation will behave */
+    // animation-delay: random(300) + ms; /* how long to delay the animation from starting */
+    animation-iteration-count: 1; /* how many times the animation will play */
+    border-style: 10px red solid;
+    // &:nth-of-type(even) {
+    //   animation-delay: 1s;
+    // }
+    
+  }
+
+// $percent: 1%;
 
 .textBox {
   display: flex;
