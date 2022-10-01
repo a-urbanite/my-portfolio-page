@@ -10,3 +10,7 @@ body {
   background-color: black;
   color: beige;
 }
+
+img {
+  user-select: none;
+}

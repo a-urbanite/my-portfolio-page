@@ -1,40 +1,55 @@
 @use 'styles/index.scss' as *;
 
 .container {
-  // position: inherit;
-}
-
-.wrapper {
   width: 180px;
   height: 60px;
-  // position: absolute;
+  position: relative;
 }
 
 .btn {
-  width: 180px;
-  height: 60px;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
   background: transparent;
   border: 2px solid $interactivePink;
   outline: none;
-  transition: 1s ease-in-out;
+  // box-sizing: border-box
+  // transition: 1s ease-in-out;
+  transition: 0.4s ease;
+  // opacity: 0.5;
+  background:  none;
 }
 
-.btnText {
-  position: relative;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 6px;
+.btn:hover {
+  transition: 0.4s ease;
+  // opacity: 0.5;
+  background:  $interactivePink;
+}
+
+.btn:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.text {
+  // z-index: 20;
+  // position: absolute;
+  // height: 100%;
+  // width: 100%;
+  // height: 60px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // padding-bottom: 6px;
   font-size: large;
   color: white;
 }
 
 .anim {
-  position: relative;
-  left: -2px;
-  top: -62px;
+  position: absolute;
+  // width: 180px;
+  // height: 60px;
+  left: 0px;
+  top: 0px;
   fill: none;
   stroke: #fff;
   stroke-dasharray: 150 480;
@@ -42,17 +57,31 @@
   transition: 0.4s ease-in-out;
 }
 
-.btn:hover {
-  transition: 0.4s ease-in-out;
-  background: #3d677c;
-}
+// .background {
+//   // position: relative;
+//   // // left: -2px;
+//   // top: -123px;
+//   height: 100%;
+//   width: 100%;
+//   // transition: 0.4s ease-in-out;
+//   // opacity: 0.5;
+//   background-color:  red;
+// }
 
-.btn:hover svg {
-  stroke-dashoffset: -480;
-}
+// .background:hover {
+//   transition: 0.4s ease-in-out;
+//   opacity: 0.5;
+//   // background:  $interactivePink;
 
-.btn span {
-  color: white;
-  font-size: 18px;
-  font-weight: 100;
-}
+// }
+
+// .btn span {
+//   color: white;
+//   font-size: 18px;
+//   font-weight: 100;
+// }
+
+
+
+
+
