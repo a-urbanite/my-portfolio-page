@@ -2,6 +2,10 @@ import Header from '../components/Header/Header'
 import Projects from '../components/Projects/Projects'
 import contentfulClient from "../contentfulClient";
 import TimeLine from '../components/TimeLine/TimeLine';
+import Skills from '../components/Skills/Skills';
+import Contact from '../components/Contact/Contact';
+import HamburgerMenu from '../components/HamburgerMenu/HamburgerMenu';
+import { useRef } from 'react';
 
 export async function getStaticProps() {
   const projectsFetch = contentfulClient.getEntries({
@@ -28,16 +32,14 @@ export async function getStaticProps() {
 
 export default function Home({projects, fileAssets}) {
 
-  
-  const profilePic = fileAssets.find((asset) => asset.fields.id === "profilePic")
-  const cv = fileAssets.find((asset) => asset.fields.id === "cv")
-  // console.log(profilePic)
-
   return (
     <div >
-      <Header profilePic={profilePic} cv={cv}></Header>
-      <Projects projects={projects}></Projects>
-      <TimeLine></TimeLine>
+      <HamburgerMenu/>
+      <Header fileAssets={fileAssets}></Header>
+      <Projects projects={projects}/>
+      <TimeLine/>
+      <Skills/>
+      <Contact/>
     </div>
   )
 }

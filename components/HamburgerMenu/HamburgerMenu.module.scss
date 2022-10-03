@@ -1,0 +1,16 @@
+@use 'styles/index.scss' as *;
+
+.hamContainer {
+  position: fixed;
+}
+
+.button {
+  background: transparent;
+  border: none;
+}
+
+.menu {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+}

@@ -4,12 +4,13 @@ import styles from './Header.module.scss'
 import AnimatedButton from '../AnimatedButton/AnimatedButton'
 import { FaGithubSquare, FaLinkedin } from 'react-icons/fa'
 
-const Header = ({profilePic, cv}) => {
+const Header = ({fileAssets}) => {
 
-  // console.log(profilePic)
+  const profilePic = fileAssets.find((asset) => asset.fields.id === "profilePic")
+  const cv = fileAssets.find((asset) => asset.fields.id === "cv")
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="headerSection">
       <div className={styles.textBlock}> 
         <h2 className={styles.subTitle}><hr className={styles.horizontalLine}/>Hello, I am</h2>
         <h1 className={styles.mainTitle}>Alexander Städtler</h1>

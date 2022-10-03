@@ -13,8 +13,9 @@ const events = [
 ]
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="timelineSection">
       <div className={styles.middle}>
+        Timeline
         {/* <Chronology type="horizontal">
             {events.map(event => (
               <>

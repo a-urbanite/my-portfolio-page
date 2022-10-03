@@ -5,7 +5,7 @@ import Gallery from '../Gallery/Gallery'
 const Projects = ({projects}) => {
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="projectsSection">
       <div className={styles.titleBlock}>
         <h1 className={styles.verticalTitle}>Projects</h1>  
       </div>
