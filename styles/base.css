@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+html {
+	font-family: sans-serif;
+	scroll-snap-type: y proximity;
+}
+
 body {
   background-color: black;
   color: beige;

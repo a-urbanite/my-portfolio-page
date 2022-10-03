@@ -1,6 +1,7 @@
 import Header from '../components/Header/Header'
 import Projects from '../components/Projects/Projects'
 import contentfulClient from "../contentfulClient";
+import TimeLine from '../components/TimeLine/TimeLine';
 
 export async function getStaticProps() {
   const projectsFetch = contentfulClient.getEntries({
@@ -36,6 +37,7 @@ export default function Home({projects, fileAssets}) {
     <div >
       <Header profilePic={profilePic} cv={cv}></Header>
       <Projects projects={projects}></Projects>
+      <TimeLine></TimeLine>
     </div>
   )
 }
