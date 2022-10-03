@@ -6,7 +6,7 @@ import Modal from '../Modal/Modal';
 import styles from './Gallery.module.scss'
 
 const Gallery = ({projects}) => {
-  const [modal, setModal] = useState({isOpen: true, project: undefined})
+  const [modal, setModal] = useState({isOpen: false, project: undefined})
   const [sliceStart, setsliceStart] = useState(0)
   const projectsSlice = projects.slice(sliceStart, sliceStart+6)
   

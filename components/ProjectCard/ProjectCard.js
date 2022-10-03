@@ -6,13 +6,6 @@ import Tilt from 'react-parallax-tilt';
 
 const ProjectCard = ({project, setModal}) => {
 
-
-
-// const openModal = () => {
-//   console.log("openModal!")
-//   setModal({isOpen: true, project: project})
-// }
-
   return (
     <div className={styles.cardContainer} >
         <Image 
