@@ -8,6 +8,8 @@ import AnimatedButton from '../AnimatedButton/AnimatedButton';
 const Modal = ({modal, setModal}) => {
 
   console.log(modal)
+  console.log("git url: ", modal.project?.fields?.gitRepoLink)
+  console.log("live url: ", modal.project?.fields?.liveLink)
 
   useEffect(() => {
     modal.isOpen ? ( document.body.style.overflow = 'hidden' ) : ( document.body.style.overflow = 'unset' );
@@ -22,12 +24,16 @@ const Modal = ({modal, setModal}) => {
         <h2 className={styles.contentTitle}>{modal.project?.fields.title}</h2>
         <div className={styles.contentText}>{documentToReactComponents(modal.project?.fields.longDescr)}</div>
         <div className={styles.iconBar}>
-          <a href='https://github.com/a-urbanite' target='blank'>
-            <AnimatedButton text={'Check the Repo'} url={modal.project?.fields?.gitRepoLInk}/>
-          </a>
-          <a href='https://github.com/a-urbanite' target='blank'>
-            <AnimatedButton text={'Live version'} url={'sasdasdsa'}/>
-          </a>
+            {modal.project?.fields?.gitRepoLink && <AnimatedButton 
+              text={'Check the Repo'} 
+              url={modal.project?.fields?.gitRepoLink}
+              />
+            }
+            {modal.project?.fields?.liveLink && <AnimatedButton 
+              text={'Live version'} 
+              url={modal.project?.fields?.liveLink}
+              />
+            }
         </div>
       </div>
     </div>
