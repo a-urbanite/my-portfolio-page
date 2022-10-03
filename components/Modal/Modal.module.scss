@@ -34,10 +34,11 @@
 .contentTitle {
   margin-bottom: 1em;
   user-select: text;
+  // display: inline;
 }
 
 .contentText {
-  height: 80%;
+  height: 79%;
   max-height: 100%;
   // margin-bottom: 1rem;
   // overflow: hidden;
@@ -53,12 +54,10 @@
       // background-color: red;
     }
   }
-
   ul {
     margin-left: 0;
     padding-left: 3em;
     list-style-position: outside;
-
     li {
       p {
         display: inline;
@@ -67,32 +66,9 @@
   }
 }
 
-.iconBar {
+.buttonBar {
   margin-block: 1em;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-}
-
-.icon {
-  color: $interactivePink;
-  &:hover {
-    color: white;
-    transition: 0.4s ease;
-   }
-}
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
 }
