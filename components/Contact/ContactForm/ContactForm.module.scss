@@ -1,0 +1,43 @@
+@use 'styles/index.scss' as *;
+
+.form {
+  // gap: 100px;
+}
+.input {
+  display: block;
+  height: 2rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  border: none;
+  border-bottom: 2px solid rgb(110, 110, 110);
+  background-color: transparent;
+  color: $bonemarrow;
+  font-size:20px;
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid $interactivePink;
+    transition: 0.4s ease;
+  }
+}
+.textarea {
+  height: 6rem;
+  max-height: 20rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  resize: vertical;
+  border: none;
+  border-bottom: 2px solid rgb(110, 110, 110);
+  background-color: transparent;
+  color: $bonemarrow;
+  font-size:20px;
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid $interactivePink;
+    transition: 0.4s ease;
+  }
+}
+.errorMessage {
+  position: relative;
+  top: -15px;
+  color: rgb(190, 100, 100);
+}
