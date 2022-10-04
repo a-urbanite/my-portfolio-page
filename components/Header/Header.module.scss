@@ -69,16 +69,7 @@
 }
 
 .horizontalLine {
-  display:inline-block;
-  margin-right: 1rem;
-  width: 8rem;
-  height: 2px;
-  border-width:0;
-  background-color: $interactivePink;
-  position: relative;
-  top: -7px;
-  // border-top: 1px dashed red;
-
+  @include horizontalLine
 }
 
 .animatedJobTitles::before {

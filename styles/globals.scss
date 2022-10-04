@@ -1,3 +1,7 @@
+$interactivePink: rgb(226, 92, 197);
+$midnightBlue: rgb(46, 23, 100);
+$bonemarrow: rgb(240,234,214);
+
 @mixin main-section {
   display: flex;
   flex-direction: row;
@@ -6,6 +10,17 @@
   width: 100vw;
   max-width:100%;
   scroll-snap-align: start;
+}
+
+@mixin horizontalLine {
+  display:inline-block;
+  margin-right: 1rem;
+  width: 8rem;
+  height: 2px;
+  border-width:0;
+  background-color: $interactivePink;
+  position: relative;
+  top: -7px;
 }
 
 

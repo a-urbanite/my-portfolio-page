@@ -4,7 +4,88 @@
   @include main-section;
   // rgb(46, 23, 100)
   // background-color: $midnightBlue;
-  // padding: 0;
-  // display: flex;
+  // padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
   // align-items: center;
+}
+
+.titleBlock {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $midnightBlue;
+  .verticalTitle {
+    user-select: none;
+    text-transform: uppercase;
+    transform: rotate(270deg);
+    font-size: 3rem;
+    letter-spacing: 0.3em;
+    color: $bonemarrow;
+  }
+}
+
+
+.formBlock {
+  width: 40%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  // align-items: center;
+  .subTitle {
+    font-weight: 200;
+  }
+  .form {
+    // gap: 100px;
+  }
+  .input {
+    display: block;
+    height: 2rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    border: none;
+    border-bottom: 2px solid rgb(110, 110, 110);
+    background-color: transparent;
+    color: $bonemarrow;
+    font-size:20px;
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid $interactivePink;
+      transition: 0.4s ease;
+    }
+  }
+  .textarea {
+    height: 6rem;
+    max-height: 20rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    resize: vertical;
+    border: none;
+    border-bottom: 2px solid rgb(110, 110, 110);
+    background-color: transparent;
+    color: $bonemarrow;
+    font-size:20px;
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid $interactivePink;
+      transition: 0.4s ease;
+    }
+  }
+  .errorMessage {
+    position: relative;
+    top: -15px;
+    color: rgb(190, 100, 100);
+  }
+}
+
+.mapBlock {
+  width: 50%;
+  background-color: $midnightBlue;
+}
+
+.horizontalLine {
+  @include horizontalLine
 }
