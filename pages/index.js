@@ -5,7 +5,7 @@ import TimeLine from '../components/TimeLine/TimeLine';
 import Skills from '../components/Skills/Skills';
 import Contact from '../components/Contact/Contact';
 import HamburgerMenu from '../components/HamburgerMenu/HamburgerMenu';
-import { useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 export async function getStaticProps() {
   const projectsFetch = contentfulClient.getEntries({
