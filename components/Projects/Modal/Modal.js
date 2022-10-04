@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import styles from './Modal.module.scss'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { FaGithubSquare, FaLinkedin } from 'react-icons/fa'
-import AnimatedButton from '../AnimatedButton/AnimatedButton';
+import AnimatedButton from '../../AnimatedButton/AnimatedButton';
 import CloseButton from '../CloseButton/CloseButton';
 
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react'
 import styles from './Projects.module.scss'
-import Gallery from '../Gallery/Gallery'
+import Gallery from './Gallery/Gallery'
 
 const Projects = ({projects}) => {
 

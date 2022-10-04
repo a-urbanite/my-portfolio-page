@@ -6,8 +6,7 @@ import { Turn as Hamburger } from 'hamburger-react'
 const HamburgerMenu = () => {
 
   const scrollTo = (id) => {
-    const element = document.getElementById(id)
-    element?.scrollIntoView({behavior: "smooth"})
+    document.getElementById(id).scrollIntoView({behavior: "smooth"})
   }
 
   return (
