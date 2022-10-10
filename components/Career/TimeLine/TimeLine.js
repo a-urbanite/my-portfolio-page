@@ -4,33 +4,18 @@ import TimeCard from "../TimeCard/TimeCard";
 import items from "./items";
 import styles from './TimeLine.module.scss'
 
-// let isMobile = true; // variable to check width
-
 const TimeLine = () => {
 
   const [screenWideEnough, setscreenWideEnough] = useState(true)
+  const checkSize = () =>  setscreenWideEnough(window.innerWidth < 700 ? false : true);
 
-    // optional: save the width of the window using state
-    // const [width, setWidth] = useState(window.innerWidth); // check width size of the window
-    const handleWindowSizeChange = () => {
-        // setWidth(window.innerWidth);
-        setscreenWideEnough(window.innerWidth < 700 ? false : true)
-        // isMobile = window.innerWidth < 700 ? true : false;
-    };
-
-    // call your useEffect
-    useEffect(() => {
-        window.addEventListener('resize', handleWindowSizeChange);
+  useEffect(() => {
+        checkSize()
+        window.addEventListener('resize', checkSize);
         return () => {
-            window.removeEventListener('resize', handleWindowSizeChange);
+            window.removeEventListener('resize', checkSize);
         };
     }, []);
-
-    // useEffect(() => {
-    //   handleWindowSizeChange()
-    // }, [])
-    
-
 
   return (
     <div className={styles.container}>
