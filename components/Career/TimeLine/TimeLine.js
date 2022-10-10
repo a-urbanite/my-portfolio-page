@@ -6,14 +6,14 @@ import styles from './TimeLine.module.scss'
 
 const TimeLine = () => {
 
-  const [screenWideEnough, setscreenWideEnough] = useState(true)
+  const [screenWideEnough, setscreenWideEnough] = useState(false)
   const checkSize = () =>  setscreenWideEnough(window.innerWidth < 700 ? false : true);
 
   useEffect(() => {
         checkSize()
-        window.addEventListener('resize', checkSize);
+        window?.addEventListener('resize', checkSize);
         return () => {
-            window.removeEventListener('resize', checkSize);
+            window?.removeEventListener('resize', checkSize);
         };
     }, []);
 
