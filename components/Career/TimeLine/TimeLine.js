@@ -3,6 +3,7 @@ import { Chrono } from "react-chrono";
 import TimeCard from "../TimeCard/TimeCard";
 import items from "./items";
 import styles from './TimeLine.module.scss'
+// import './TimeLine.css'
 
 const TimeLine = () => {
 
@@ -22,8 +23,8 @@ const TimeLine = () => {
     <Chrono
       items={items}
       mode={screenWideEnough ? "HORIZONTAL" : "VERTICAL"}
-      slideShow={true}
-      slideItemDuration={500}
+      // slideShow={true}
+      // slideItemDuration={500}
       // itemWidth={"150"}
       // cardLess={true}
       lineWidth={5}
@@ -33,56 +34,29 @@ const TimeLine = () => {
       // disableAutoScrollOnClick={true}
       // focusActiveItemOnLoad={false}
       showAllCardsHorizontal={true}
+      // cardWidth={300}
+      cardHeight={150}
       theme={{
-        primary: "yellow",  //color of line and points, outline frame of timecard, color of card subtitle
+        primary: "rgb(226, 92, 197)",  //color of line and points, outline frame of timecard, color of card subtitle
         secondary: "black",   //background of timeItem and timepoint while focussed
         cardBgColor: "",  //timecard background color
         cardForeColor: "pink", //color of card title
         titleColor: "white", //color of timepoint titles
+        titleColorActive: 'rgb(226, 92, 197)',
+      }}
+      fontSizes={{
+        // cardSubtitle: '0.85rem',
+        // cardText: '0.8rem',
+        // cardTitle: '1rem',
+        title: '1.4rem',
+      }}
+      classNames={{
+        card: 'timeCard'
       }}
     >
         {items.map((item, index) => {
-          return <TimeCard timeItem={item} key={index}></TimeCard>
+          return <TimeCard timeItem={item} key={index}/>
         })}
-    {/* <div>
-      <div style={{width: "250px", height: "250px"}}>
-        <img style={{maxWidth:  "100%", maxHeight:  "100%"}}  src="https://cdn.tutsplus.com/net/uploads/2013/08/github-collab-retina-preview.gif"/>
-      </div>
-    </div>
-    <div>
-      <h3>This is a List</h3>
-      <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-      </ul>
-    </div>
-    <div>
-      <h3>Dunkirk</h3>
-      <p>
-        The Battle of Dunkirk (French: Bataille de Dunkerque) was fought in Dunkirk (Dunkerque), France, during the Second World War, between the Allies and Nazi Germany.
-      </p>
-    </div>
-    <div style={{margin: "1rem"}}>
-      <h3>Table</h3>
-      <table>
-        <thead>
-          <tr>
-            <td>Column  1</td>
-            <td>Column  2</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Value 1</td>
-            <td>Value 2</td>
-          </tr>
-          <tr>
-            <td>Value 5</td>
-            <td>Value 6</td>
-          </tr>
-        </tbody>
-      </table>
-    </div> */}
     </Chrono>
   </div>
   )

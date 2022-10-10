@@ -10,14 +10,14 @@
 
 .top {
   background-color: $midnightBlue;
-  height: calc(100vh/3);
+  height: 25vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .middle {
-  height: calc(100vh/3);
+  height: 70vh;
   // padding-top: 3rem;
   // padding-left: 2rem;
   background-color: black;
@@ -26,5 +26,13 @@
 
 .bottom {
   background-color: $midnightBlue;
-  height: calc(100vh/3);
+  height: 7vh;
+}
+
+.title {
+  text-transform: uppercase;
+  // transform: rotate(270deg);
+  font-size: 3rem;
+  letter-spacing: 0.3em;
+  color: $bonemarrow;
 }

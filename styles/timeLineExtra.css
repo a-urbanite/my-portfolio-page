@@ -1,0 +1,18 @@
+#timeline-main-wrapper div:first-child {
+  /* background-color: red; */
+  left:auto !important
+}
+
+.timeCard {
+  background-color: rgb(226, 92, 197);
+  margin: 1rem !important;
+  border-radius: 0% !important;
+  width: auto !important;
+}
+
+#react-chrono-timeline > div:hover{
+  /* background-color: red; */
+  /* transition: ; */
+  transform: scale(1.1);
+}
+

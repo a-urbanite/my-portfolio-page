@@ -3,11 +3,10 @@ import styles from './TimeCard.module.scss'
 
 const TimeCard = ({timeItem}) => {
   return (
-    <div className={styles.container}>
-      <h1>{timeItem.title}</h1>
-      <hr/>
-      <p>{timeItem.cardText}</p>
-    </div>
+    <>
+      <h2 className={styles.title}>{timeItem.title}</h2>
+      <p className={styles.text}>{timeItem.cardText}</p>
+    </>
   )
 }
 

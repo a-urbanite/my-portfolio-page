@@ -10,7 +10,7 @@ const Career = () => {
   return (
     <div className={styles.container} id="timelineSection">
       <div className={styles.top}>
-        <h1>My Coding Journey</h1>
+        <h1 className={styles.title}>My Journey</h1>
       </div>
       <div className={styles.middle}>
         <Timeline/>
