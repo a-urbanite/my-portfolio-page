@@ -1,7 +1,7 @@
 import Header from '../components/Header/Header'
 import Projects from '../components/Projects/Projects'
 import contentfulClient from "../contentfulClient";
-import TimeLine from '../components/TimeLine/TimeLine';
+import Career from '../components/Career/Career';
 import Skills from '../components/Skills/Skills';
 import Contact from '../components/Contact/Contact';
 import HamburgerMenu from '../components/HamburgerMenu/HamburgerMenu';
@@ -37,7 +37,7 @@ export default function Home({projects, fileAssets}) {
       <HamburgerMenu/>
       <Header fileAssets={fileAssets}></Header>
       <Projects projects={projects}/>
-      <TimeLine/>
+      <Career/>
       <Skills/>
       <Contact/>
     </div>
