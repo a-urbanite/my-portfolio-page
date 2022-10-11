@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Chrono } from "react-chrono";
 import TimeCard from "../TimeCard/TimeCard";
-// import items from "./items";
 import styles from './TimeLine.module.scss'
-// import './TimeLine.css'
 
 const TimeLine = ({timelineEntries}) => {
 
   const sortedTimelineEntries = timelineEntries.sort((a,b) => a.fields.orderNum - b.fields.orderNum)
-
-  console.log(sortedTimelineEntries)
 
   const [screenWideEnough, setscreenWideEnough] = useState(false)
   const checkSize = () =>  setscreenWideEnough(window.innerWidth < 700 ? false : true);
@@ -46,7 +42,7 @@ const TimeLine = ({timelineEntries}) => {
         cardBgColor: "",  //timecard background color
         cardForeColor: "pink", //color of card title
         titleColor: "white", //color of timepoint titles
-        titleColorActive: 'rgb(226, 92, 197)',
+        titleColorActive: 'rgb(226, 92, 197)', //color of timepoint titles when focussed
       }}
       fontSizes={{
         // cardSubtitle: '0.85rem',

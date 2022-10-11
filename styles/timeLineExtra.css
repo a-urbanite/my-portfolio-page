@@ -8,11 +8,24 @@
   margin: 1rem !important;
   border-radius: 0% !important;
   width: auto !important;
+  max-height: 280px;
 }
 
-#react-chrono-timeline > div:hover{
+.timeCard > div > p {
+  /* background-color: red; */
+  margin-bottom: 1rem;
+}
+
+.timeCard > div > ul > li {
+  /* background-color: red; */
+  /* margin-bottom: 1rem; */
+  /* list-style-position: outside; */
+}
+
+
+#react-chrono-timeline > div:hover {
   /* background-color: red; */
   /* transition: ; */
-  transform: scale(1.1);
+  transform: scale(1.07);
 }
 

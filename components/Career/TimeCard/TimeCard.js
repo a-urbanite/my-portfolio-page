@@ -4,8 +4,6 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 const TimeCard = ({timeLineEntry}) => {
 
-  // console.log(timeLineEntry)
-
   return (
     <>
       <h2 className={styles.title}>{timeLineEntry.fields.cardHeader}</h2>
