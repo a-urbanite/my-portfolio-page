@@ -5,7 +5,6 @@ import Career from '../components/Career/Career';
 import Skills from '../components/Skills/Skills';
 import Contact from '../components/Contact/Contact';
 import HamburgerMenu from '../components/HamburgerMenu/HamburgerMenu';
-import { useState, useEffect } from 'react';
 
 export async function getStaticProps() {
   const projectsFetch = contentfulClient.getEntries({
@@ -16,28 +15,34 @@ export async function getStaticProps() {
     content_type: "fileAsset",
   });
 
-  const [projects, fileAssets] =
+  const timelineEntryFetch = contentfulClient.getEntries({
+    content_type: "timelineEntry",
+  });
+
+  const [projects, fileAssets, timelineEntries] =
     await Promise.all([
       projectsFetch,
-      fileAssetFetch
+      fileAssetFetch,
+      timelineEntryFetch
     ]);
 
   return {
     props: {
       projects: projects.items,
-      fileAssets: fileAssets.items
+      fileAssets: fileAssets.items,
+      timelineEntries: timelineEntries.items
     },
   };
 }
 
-export default function Home({projects, fileAssets}) {
+export default function Home({projects, fileAssets, timelineEntries}) {
 
   return (
     <div >
       <HamburgerMenu/>
-      <Header fileAssets={fileAssets}></Header>
+      <Header fileAssets={fileAssets}/>
       <Projects projects={projects}/>
-      <Career/>
+      <Career timelineEntries={timelineEntries}/>
       <Skills/>
       <Contact/>
     </div>

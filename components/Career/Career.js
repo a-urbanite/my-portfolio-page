@@ -5,7 +5,7 @@ import Timeline from './TimeLine/TimeLine'
 
 
 
-const Career = () => {
+const Career = ({timelineEntries}) => {
 
   return (
     <div className={styles.container} id="timelineSection">
@@ -13,7 +13,7 @@ const Career = () => {
         <h1 className={styles.title}>My Journey</h1>
       </div>
       <div className={styles.middle}>
-        <Timeline/>
+        <Timeline timelineEntries={timelineEntries}/>
       </div>
       <div className={styles.bottom}>
       </div>

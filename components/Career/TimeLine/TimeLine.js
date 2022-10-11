@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Chrono } from "react-chrono";
 import TimeCard from "../TimeCard/TimeCard";
-import items from "./items";
+// import items from "./items";
 import styles from './TimeLine.module.scss'
 // import './TimeLine.css'
 
-const TimeLine = () => {
+const TimeLine = ({timelineEntries}) => {
+
+  const sortedTimelineEntries = timelineEntries.sort((a,b) => a.fields.orderNum - b.fields.orderNum)
+
+  console.log(sortedTimelineEntries)
 
   const [screenWideEnough, setscreenWideEnough] = useState(false)
   const checkSize = () =>  setscreenWideEnough(window.innerWidth < 700 ? false : true);
@@ -21,7 +25,7 @@ const TimeLine = () => {
   return (
     <div className={styles.container}>
     <Chrono
-      items={items}
+      items={sortedTimelineEntries.map((el) => el.fields)}
       mode={screenWideEnough ? "HORIZONTAL" : "VERTICAL"}
       // slideShow={true}
       // slideItemDuration={500}
@@ -54,8 +58,8 @@ const TimeLine = () => {
         card: 'timeCard'
       }}
     >
-        {items.map((item, index) => {
-          return <TimeCard timeItem={item} key={index}/>
+        {sortedTimelineEntries.map((timeLineEntry, index) => {
+          return <TimeCard timeLineEntry={timeLineEntry} key={index}/>
         })}
     </Chrono>
   </div>
