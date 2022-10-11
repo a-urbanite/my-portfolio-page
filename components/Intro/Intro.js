@@ -3,6 +3,7 @@ import React from 'react'
 import styles from './Intro.module.scss'
 import AnimatedButton from '../AnimatedButton/AnimatedButton'
 import { FaGithubSquare, FaLinkedin } from 'react-icons/fa'
+import Tilt from 'react-parallax-tilt';
 
 const Intro = ({fileAssets}) => {
 
@@ -29,6 +30,9 @@ const Intro = ({fileAssets}) => {
           layout='fill'
           objectFit='cover'
         />
+        <Tilt className={styles.textBox}>
+          <p className={styles.introText}>Enthusiastic Fullstack Dev from Germany with a pivot towards backend. My background in archaeological science has taught me a great deal about managing project schedules and quality standards. I care deeply about functioning teams, well-crafted plans and agile work strategies.</p>
+        </Tilt>
       </div>
     </div>
   )

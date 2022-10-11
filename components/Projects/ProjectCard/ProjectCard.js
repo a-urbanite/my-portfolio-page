@@ -3,7 +3,6 @@ import styles from './ProjectCard.module.scss'
 import Image from 'next/image'
 import Tilt from 'react-parallax-tilt';
 
-
 const ProjectCard = ({project, setModal}) => {
 
   return (
