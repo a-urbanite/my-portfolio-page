@@ -4,6 +4,7 @@
   position: fixed;
   top: 10px;
   left: -1px;
+  z-index: 60;
 }
 
 .button {
@@ -12,7 +13,24 @@
 }
 
 .menu {
-  background-color: red;
+  // position: absolute;
+  background-color: $interactivePink;
   display: flex;
   flex-direction: column;
+  padding: 1rem 1rem 0rem 1rem;
+  
+  // height: 25vh;
+  // transition: all 4s ease-in-out;
+}
+
+.menuItem {
+  font-size: larger;
+  margin-bottom: 1rem;
+  border: 1px solid white;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  &:hover {
+    cursor: pointer;
+    // color: $midnightBlue;
+    scale: 1.1;
+  }
 }
