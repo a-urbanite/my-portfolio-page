@@ -1,4 +1,4 @@
-import Header from '../components/Header/Header'
+import Intro from '../components/Intro/Intro'
 import Projects from '../components/Projects/Projects'
 import contentfulClient from "../contentfulClient";
 import Career from '../components/Career/Career';
@@ -48,7 +48,7 @@ export default function Home({projects, fileAssets, timelineEntries, skillSets})
   return (
     <div >
       <HamburgerMenu/>
-      <Header fileAssets={fileAssets}/>
+      <Intro fileAssets={fileAssets}/>
       <Projects projects={projects}/>
       <Career timelineEntries={timelineEntries}/>
       <Skills skillSets={skillSets}/>

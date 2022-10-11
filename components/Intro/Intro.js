@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import React from 'react'
-import styles from './Header.module.scss'
+import styles from './Intro.module.scss'
 import AnimatedButton from '../AnimatedButton/AnimatedButton'
 import { FaGithubSquare, FaLinkedin } from 'react-icons/fa'
 
-const Header = ({fileAssets}) => {
+const Intro = ({fileAssets}) => {
 
   const profilePic = fileAssets.find((asset) => asset.fields.id === "profilePic")
   const cv = fileAssets.find((asset) => asset.fields.id === "cv")
@@ -34,4 +34,4 @@ const Header = ({fileAssets}) => {
   )
 }
 
-export default Header
+export default Intro
