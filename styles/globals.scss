@@ -23,6 +23,12 @@ $bonemarrow: rgb(240,234,214);
   top: -7px;
 }
 
+@mixin sectionTitle {
+  text-transform: uppercase;
+  font-size: 3rem;
+  letter-spacing: 0.3em;
+  color: $bonemarrow;
+}
 
 
 // @media (prefers-color-scheme: dark) {

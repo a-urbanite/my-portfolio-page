@@ -19,23 +19,31 @@ export async function getStaticProps() {
     content_type: "timelineEntry",
   });
 
-  const [projects, fileAssets, timelineEntries] =
+  const skillSetFetch = contentfulClient.getEntries({
+    content_type: "skillSet",
+  });
+
+  
+
+  const [projects, fileAssets, timelineEntries, skillSets] =
     await Promise.all([
       projectsFetch,
       fileAssetFetch,
-      timelineEntryFetch
+      timelineEntryFetch,
+      skillSetFetch
     ]);
 
   return {
     props: {
       projects: projects.items,
       fileAssets: fileAssets.items,
-      timelineEntries: timelineEntries.items
+      timelineEntries: timelineEntries.items,
+      skillSets: skillSets.items
     },
   };
 }
 
-export default function Home({projects, fileAssets, timelineEntries}) {
+export default function Home({projects, fileAssets, timelineEntries, skillSets}) {
 
   return (
     <div >
@@ -43,7 +51,7 @@ export default function Home({projects, fileAssets, timelineEntries}) {
       <Header fileAssets={fileAssets}/>
       <Projects projects={projects}/>
       <Career timelineEntries={timelineEntries}/>
-      <Skills/>
+      <Skills skillSets={skillSets}/>
       <Contact/>
     </div>
   )

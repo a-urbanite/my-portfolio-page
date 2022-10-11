@@ -16,6 +16,6 @@ body {
   color: beige;
 }
 
-img, div {
+img {
   user-select: none;
 }

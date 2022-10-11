@@ -1,0 +1,30 @@
+@use 'styles/index.scss' as *;
+
+.container {
+  background-color: $midnightBlue;
+  margin: 0rem 0.5rem 1rem 0.5rem;
+  break-inside: avoid-column;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  ul {
+    margin-left: 0;
+    padding-left: 2em;
+    list-style-position: outside;
+    li {
+      p {
+        display: inline;
+      }
+    }
+  }
+}
+
+.title {
+  font-weight: 200;
+  padding-bottom: 1rem;
+  break-inside: avoid-column;
+}
+
+.horizontalLine {
+  @include horizontalLine;
+  width: 3rem;
+}
