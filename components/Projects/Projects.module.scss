@@ -2,18 +2,23 @@
 
 .container {
   @include main-section;
-  // rgb(46, 23, 100)
-  // background-color: black;
   padding: 0;
 
   .titleBlock {
-    // height: 100%;
     width: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: $midnightBlue;
-    // text-orientation: mixed;
+
+      // media query for tablet
+      @media (min-width: calc($breakpointTablet + 1px)) and (max-width: $breakpointDesktop){
+        width: 12.5%;
+      }
+      // media query for phone
+      @media (max-width: $breakpointTablet){
+        width: 10%;
+      }
 
     .verticalTitle {
       @include sectionTitle;
@@ -27,6 +32,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+      // media query for tablet
+      @media (min-width: calc($breakpointTablet + 1px)) and (max-width: $breakpointDesktop){
+        width: 87.5%;
+      }
+      // media query for phone
+      @media (max-width: $breakpointTablet){
+        width: 90%;
+      }
   }
 }
 

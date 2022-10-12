@@ -5,6 +5,8 @@ import Career from '../components/Career/Career';
 import Skills from '../components/Skills/Skills';
 import Contact from '../components/Contact/Contact';
 import HamburgerMenu from '../components/HamburgerMenu/HamburgerMenu';
+import { useState, useEffect, createContext } from 'react';
+import { ScreenContext, ScreenContextProvider } from '../components/ScreenContext';
 
 export async function getStaticProps() {
   const projectsFetch = contentfulClient.getEntries({
@@ -46,13 +48,13 @@ export async function getStaticProps() {
 export default function Home({projects, fileAssets, timelineEntries, skillSets}) {
 
   return (
-    <div >
+    <ScreenContextProvider>
       <HamburgerMenu/>
       <Intro fileAssets={fileAssets}/>
       <Projects projects={projects}/>
       <Career timelineEntries={timelineEntries}/>
       {/* <Skills skillSets={skillSets}/> */}
       <Contact/>
-    </div>
+    </ScreenContextProvider>
   )
 }

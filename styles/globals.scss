@@ -13,18 +13,7 @@ $breakpointDesktop: 1000px;
   width: 100vw;
   max-width:100%;
   scroll-snap-align: start;
-  // media query for tablet
-  @media (min-width: calc($breakpointTablet + 1px)) and (max-width: $breakpointDesktop){
-    padding: 0rem;
-    // flex-direction: column;
-  }
-  // media query for phone
-  @media (max-width: $breakpointTablet){
-      padding: 0rem;
-      flex-direction: column;
-      // width: 100vw;
-      height: 200vh
-  }
+
 }
 
 @mixin horizontalLine {
@@ -43,6 +32,15 @@ $breakpointDesktop: 1000px;
   font-size: 3rem;
   letter-spacing: 0.3em;
   color: $bonemarrow;
+
+      // media query for tablet
+      @media (min-width: calc($breakpointTablet + 1px)) and (max-width: $breakpointDesktop){
+        font-size: 2rem;
+      }
+      // media query for phone
+      @media (max-width: $breakpointTablet){
+        font-size: 1.5rem;
+      }
 }
 
 

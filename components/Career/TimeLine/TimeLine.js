@@ -1,28 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Chrono } from "react-chrono";
 import TimeCard from "../TimeCard/TimeCard";
 import styles from './TimeLine.module.scss'
+import { ScreenContext } from "../../ScreenContext";
 
 const TimeLine = ({timelineEntries}) => {
 
+  const screenContext = useContext(ScreenContext);
   const sortedTimelineEntries = timelineEntries.sort((a,b) => a.fields.orderNum - b.fields.orderNum)
-
-  const [screenWideEnough, setscreenWideEnough] = useState(false)
-  const checkSize = () =>  setscreenWideEnough(window.innerWidth < 700 ? false : true);
-
-  useEffect(() => {
-        checkSize()
-        window?.addEventListener('resize', checkSize);
-        return () => {
-            window?.removeEventListener('resize', checkSize);
-        };
-    }, []);
 
   return (
     <div className={styles.container}>
     <Chrono
       items={sortedTimelineEntries.map((el) => el.fields)}
-      mode={screenWideEnough ? "HORIZONTAL" : "VERTICAL"}
+      mode={screenContext == 'mobile' ? "VERTICAL" : "HORIZONTAL"}
       // slideShow={true}
       // slideItemDuration={500}
       // itemWidth={"150"}

@@ -2,10 +2,15 @@
 
 .container {
   @include main-section;
+    // media query for tablet
+    @media (min-width: calc($breakpointTablet + 1px)) and (max-width: $breakpointDesktop){
+      padding: 0rem;
+    }
     // media query for phone
     @media (max-width: $breakpointTablet){
-      // width: 100%;
-      height: 100vh
+      padding: 0rem;
+      flex-direction: column;
+      height: 200vh
     }
 }
 
@@ -17,6 +22,7 @@
   justify-content: center;
   gap: 1rem;
   background-color: rgb(46, 23, 100);
+
   // media query for phone
   @media (max-width: $breakpointTablet){
     width: 100%;
@@ -64,14 +70,15 @@
   justify-content: center;
   // media query for tablet
   @media (min-width: calc($breakpointTablet + 1px)) and (max-width: $breakpointDesktop){
-    height: 100%;
+    height: 100vh;
     width: 100%;
   }
   // media query for phone
   @media (max-width: $breakpointTablet){
-    display: none;
-    // height: 100vh;
-    // width: 100%;
+    // display: none;
+    height: 100vh;
+    width: 100%;
+    align-items: flex-end;
   }
 
   .textBox {
@@ -83,6 +90,12 @@
     display: flex;
     align-items: center;
     background-color: $interactivePink;
+
+    // media query for phone
+    @media (max-width: $breakpointTablet){
+      height: 45vh;
+      opacity: 0.9;
+    }
     &:hover {
       transition: opacity 0.3s;  
       opacity: 0.9;
@@ -90,7 +103,6 @@
     .introText {
       font-size: large;
       text-align: justify;
-      // vertical-align: bottom;
     }
   }
 }

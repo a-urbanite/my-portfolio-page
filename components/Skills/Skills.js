@@ -4,8 +4,6 @@ import SkillSetCard from './SkillSetCard.js/SkillSetCard'
 
 const Skills = ({skillSets}) => {
 
-console.log(skillSets)
-
 const sortedSkillSets = skillSets.sort((a,b) => a.fields.order - b.fields.order) 
 
   return (
