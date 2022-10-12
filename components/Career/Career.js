@@ -1,9 +1,6 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import styles from './Career.module.scss'
-// import Chronology from 'react-chronos';
 import Timeline from './TimeLine/TimeLine'
-
-
 
 const Career = ({timelineEntries}) => {
 

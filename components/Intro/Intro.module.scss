@@ -2,21 +2,29 @@
 
 .container {
   @include main-section;
+    // media query for phone
+    @media (max-width: $breakpointTablet){
+      // width: 100%;
+      height: 100vh
+    }
 }
 
 .textBlock {
-  // height: 100%;
   width: 50%;
   padding: 3rem;
   display: flex;
   flex-direction: column;
-  // align-items: center;
   justify-content: center;
   gap: 1rem;
   background-color: rgb(46, 23, 100);
+  // media query for phone
+  @media (max-width: $breakpointTablet){
+    width: 100%;
+    height: 100vh
+  }
   
   .horizontalLine {
-    @include horizontalLine
+    @include horizontalLine;    
   }
 
   .subTitle {
@@ -54,8 +62,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  // media query for tablet
+  @media (min-width: calc($breakpointTablet + 1px)) and (max-width: $breakpointDesktop){
+    height: 100%;
+    width: 100%;
+  }
+  // media query for phone
+  @media (max-width: $breakpointTablet){
+    display: none;
+    // height: 100vh;
+    // width: 100%;
+  }
 
-  
   .textBox {
     opacity: 0;
     position: absolute;
@@ -76,9 +94,6 @@
     }
   }
 }
-
-
-
 
 .animatedJobTitles::before {
   content: "Fullstack Webdeveloper";

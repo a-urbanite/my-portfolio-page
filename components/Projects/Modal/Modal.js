@@ -1,12 +1,22 @@
 import React, { useEffect } from 'react'
 import styles from './Modal.module.scss'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { INLINES } from '@contentful/rich-text-types'
 // import { FaGithubSquare, FaLinkedin } from 'react-icons/fa'
 import AnimatedButton from '../../AnimatedButton/AnimatedButton';
 import CloseButton from '../CloseButton/CloseButton';
 
 
 const Modal = ({modal, setModal}) => {
+
+  const options = {
+    renderNode: {
+      [INLINES.HYPERLINK]: (node) => {
+        console.log(node)
+        return <a href={node.data.uri} target={'_blank'} rel="noreferrer">{node.content[0].value}</a>;
+      }
+    }
+  }
 
   useEffect(() => {
     modal.isOpen ? ( document.body.style.overflow = 'hidden' ) : ( document.body.style.overflow = 'unset' );
@@ -20,7 +30,7 @@ const Modal = ({modal, setModal}) => {
       <div className={styles.content} onClick={(e) => e.stopPropagation()}>
         <h2 className={styles.contentTitle}>{modal.project?.fields.title}</h2>
         <CloseButton setModal={setModal}/>
-        <div className={styles.contentText}>{documentToReactComponents(modal.project?.fields.longDescr)}</div>
+        <div className={styles.contentText}>{documentToReactComponents(modal.project?.fields.longDescr, options)}</div>
         <div className={styles.buttonBar}>
             {modal.project?.fields?.gitRepoLink && <AnimatedButton 
               text={'Check the Repo'} 

@@ -5,6 +5,8 @@ import Tilt from 'react-parallax-tilt';
 
 const ProjectCard = ({project, setModal}) => {
 
+  const [textCardOpen, settextCardOpen] = useState(false)
+
   return (
     <div className={styles.cardContainer} >
         <Image 

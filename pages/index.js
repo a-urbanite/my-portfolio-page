@@ -51,7 +51,7 @@ export default function Home({projects, fileAssets, timelineEntries, skillSets})
       <Intro fileAssets={fileAssets}/>
       <Projects projects={projects}/>
       <Career timelineEntries={timelineEntries}/>
-      <Skills skillSets={skillSets}/>
+      {/* <Skills skillSets={skillSets}/> */}
       <Contact/>
     </div>
   )

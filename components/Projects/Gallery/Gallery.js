@@ -10,15 +10,16 @@ const Gallery = ({projects}) => {
   const [sliceStart, setsliceStart] = useState(0)
   const projectsSlice = projects.slice(sliceStart, sliceStart+6)
   
-  const decreaseSliceCounter = () => {
-    if (sliceStart == 0) return;
-    setsliceStart((prev) => prev-2)
-  }
-  
   const increaseSliceCounter = () => {
     if (projects.length < sliceStart+6) return;
-    setsliceStart((prev) => prev+2)
+    setsliceStart((prev) => prev+6)
   }
+
+  const decreaseSliceCounter = () => {
+    if (sliceStart == 0) return;
+    setsliceStart((prev) => prev-6)
+  }
+  
   
   return (
     <div className={styles.galleryContainer}>

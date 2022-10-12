@@ -2,6 +2,9 @@ $interactivePink: rgb(226, 92, 197);
 $midnightBlue: rgb(46, 23, 100);
 $bonemarrow: rgb(240,234,214);
 
+$breakpointTablet: 700px;
+$breakpointDesktop: 1000px;
+
 @mixin main-section {
   display: flex;
   flex-direction: row;
@@ -10,12 +13,24 @@ $bonemarrow: rgb(240,234,214);
   width: 100vw;
   max-width:100%;
   scroll-snap-align: start;
+  // media query for tablet
+  @media (min-width: calc($breakpointTablet + 1px)) and (max-width: $breakpointDesktop){
+    padding: 0rem;
+    // flex-direction: column;
+  }
+  // media query for phone
+  @media (max-width: $breakpointTablet){
+      padding: 0rem;
+      flex-direction: column;
+      // width: 100vw;
+      height: 200vh
+  }
 }
 
 @mixin horizontalLine {
   display:inline-block;
   margin-right: 1rem;
-  width: 8rem;
+  width: 6vw;
   height: 2px;
   border-width:0;
   background-color: $interactivePink;

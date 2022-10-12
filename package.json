@@ -24,6 +24,7 @@
     "react-icons": "^4.4.0",
     "react-leaflet": "^4.1.0",
     "react-parallax-tilt": "^1.7.67",
+    "react-random-reveal": "^2.0.0",
     "sass": "^1.54.9"
   },
   "devDependencies": {
