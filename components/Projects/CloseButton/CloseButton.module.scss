@@ -43,6 +43,16 @@ $thickness : 2px;
   position: absolute;
   top: 3rem;
   right: 6rem;
+
+    // media query for tablet
+    @media (min-width: calc($breakpointTablet + 1px)) and (max-width: $breakpointDesktop){
+    
+    }
+    // media query for phone
+    @media (max-width: $breakpointTablet){
+      top: 2rem;
+      right: 2rem;
+    }
 }
 
 .btnClose {

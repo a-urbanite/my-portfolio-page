@@ -14,7 +14,6 @@ const Gallery = ({projects}) => {
   const [galleryFillCount, setgalleryFillCount] = useState(null)
   const [sliceStart, setsliceStart] = useState(0)
   const projectsSlice = projects.slice(sliceStart, sliceStart+galleryFillCount)
-
   
   const handlers = useSwipeable({
     onSwipedLeft: (e) => increaseSliceCounter(),
@@ -36,14 +35,6 @@ const Gallery = ({projects}) => {
     if (sliceStart == 0) return;
     setsliceStart((prev) => prev-galleryFillCount)
   }
-
-  // useEffect(() => {
-  //   console.log("project.length", projects.length)
-  //   console.log("sliceStart", sliceStart)
-  //   console.log("galleryfillcount", galleryFillCount)
-  // }, [sliceStart])
-  
-  
   
   return (
     <div className={styles.galleryContainer} {...handlers}>
