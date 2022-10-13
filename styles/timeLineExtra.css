@@ -1,5 +1,4 @@
 #timeline-main-wrapper div:first-child {
-  /* background-color: red; */
   left:auto !important
 }
 
@@ -12,41 +11,22 @@
 }
 
 .timeCard > div > div > p {
-  /* background-color: red; */
   margin-bottom: 1rem;
 }
 
 .timeCard > div > div > ul  {
-  /* background-color: red; */
   margin-left: 0;
   margin-bottom: 1rem;
   padding-left: 3em;
   list-style-position: outside;
 }
 
-/* ul {
-  margin-left: 0;
-  padding-left: 3em;
-  list-style-position: outside;
-  li {
-    p {
-      display: inline;
-    }
-  }
-} */
-
 
 #react-chrono-timeline > div:hover {
-  /* background-color: red; */
-  /* transition: ; */
   transform: scale(1.07);
 }
 
 #timeline-main-wrapper {
   padding: 0 !important;
-}
-
-#timeline-main-wrapper > div {
-  /* overflow: visible !important; */
 }
 

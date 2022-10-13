@@ -4,30 +4,53 @@
   @include main-section;
   padding: 0;
 
-  .left {
-    width: 15vw;
+  // media query for phone and tablet
+  @media (max-width: $breakpointDesktop){
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .titleBlock {
+    width: 15%;
     // height: 15vh;
     background-color: $midnightBlue;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+      // media query for phone and tablet
+      @media (max-width: $breakpointDesktop){
+        // margin-top: 1rem;
+        padding: 1rem;
+        width: 100%;
+      }
+
     .title {
       @include sectionTitle;
       transform: rotate(270deg);
+        // media query for phone and tablet
+        @media (max-width: $breakpointDesktop){
+          transform: rotate(0deg);
+        }
     }
   }
   
-  .right {
+  .skillBlock {
     // height: 85vh;
-    width: 85vw;
+    width: 85%;
     padding: 2rem 1.5rem 2rem 1.5rem;
     column-count: 4;
     column-gap: 0;
-    // div:first-child {
-    //   // background-color: red;
-    //   margin-top: 3rem;
-    // }
+    // media query for tablet
+    @media (min-width: calc($breakpointTablet + 1px)) and (max-width: $breakpointDesktop){
+      width: 100%;
+      column-count: 3;
+      }
+    // media query for phone
+    @media (max-width: $breakpointTablet){
+      width: 100%;
+      column-count: 2;
+      padding: 1rem 0.5rem 1rem 0.5rem;
+    }
   }
 }
 

@@ -8,10 +8,10 @@ const sortedSkillSets = skillSets.sort((a,b) => a.fields.order - b.fields.order)
 
   return (
     <div className={styles.container} id="skillsSection">
-      <div className={styles.left}>
+      <div className={styles.titleBlock}>
         <h1 className={styles.title}>Skillset</h1>
       </div>
-      <div className={styles.right}>
+      <div className={styles.skillBlock}>
         {sortedSkillSets.map((skillSet, index) => {
           return <SkillSetCard skillSet={skillSet} key={index}/>
         })}
