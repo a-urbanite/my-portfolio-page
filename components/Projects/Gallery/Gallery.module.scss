@@ -4,34 +4,38 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: auto;
-  // flex: 1
-}
 
-.gallery {
-  // background-color: black;
-  height: auto;
-  // width: 100%;
-  // padding: 25px 0px 25px 0px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  // flex: 1
-}
-
-.arrowKey {
-  // height: 2rem;
-  width: 3rem;
-  margin: 1rem;
-  cursor: pointer;
-  &:hover {
-    scale: 1.3;
+  .arrowKey {
+    // height: 2rem;
+    width: 3rem;
+    margin: 1rem;
+    scale: 1.8;
+    cursor: pointer;
+    &:hover {
+      scale: 2.3;
+      color: $interactivePink;
+    }
+      // media query for tablet
+      @media (min-width: calc($breakpointTablet + 1px)) and (max-width: $breakpointDesktop){
+        
+      }
+      // media query for phone
+      @media (max-width: $breakpointTablet){
+        width: 3vw;
+        // scale: 1.4;
+        margin: 0;
+      }
   }
-}
+  
+  .inactiveArrow {
+    opacity: 0;
+    cursor: initial;
+    pointer-events: none;
+  }
 
-.inactiveArrow {
-  // color: red;
-  opacity: 0;
-  cursor: initial;
-  // display: none;
+  .gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }

@@ -25,6 +25,17 @@
   
   animation-name: fadeIn; 
   animation-timing-function: ease-out; 
+
+    // media query for tablet
+    @media (min-width: calc($breakpointTablet + 1px)) and (max-width: $breakpointDesktop){
+      width: 48%;
+    }
+    // media query for phone
+    @media (max-width: $breakpointTablet){
+      width: 75vw;
+      max-width: 400px;
+      margin: 0.5rem;
+    }
 }
 
 .textBox {
@@ -50,4 +61,13 @@
     // background-color: red;
     cursor: pointer;
   }
+      // media query for tablet
+      @media (min-width: calc($breakpointTablet + 1px)) and (max-width: $breakpointDesktop){
+        // font-size: 2rem;
+      }
+      // media query for phone
+      @media (max-width: $breakpointTablet){
+        opacity: 0.9;
+        top: 10rem;
+      }
 }

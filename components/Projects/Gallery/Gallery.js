@@ -20,11 +20,6 @@ const Gallery = ({projects}) => {
     else { setgalleryFillCount(1) }
   }, [screenContext])
   
-
-  // useEffect(() => {
-  //   console.log(screenContext)
-  // }, [screenContext])
-  
   const increaseSliceCounter = () => {
     if (projects.length < sliceStart+galleryFillCount) return;
     setsliceStart((prev) => prev+galleryFillCount)
@@ -34,6 +29,13 @@ const Gallery = ({projects}) => {
     if (sliceStart == 0) return;
     setsliceStart((prev) => prev-galleryFillCount)
   }
+
+  useEffect(() => {
+    console.log("project.length", projects.length)
+    console.log("sliceStart", sliceStart)
+    console.log("galleryfillcount", galleryFillCount)
+  }, [sliceStart])
+  
   
   
   return (
@@ -46,7 +48,7 @@ const Gallery = ({projects}) => {
           })}
         </div>
       </Tilt>
-      <FaChevronRight className={`${styles.arrowKey} ${projects.length < sliceStart+galleryFillCount && styles.inactiveArrow}`} onClick={() => increaseSliceCounter()}/>
+      <FaChevronRight className={`${styles.arrowKey} ${projects.length <= sliceStart+galleryFillCount && styles.inactiveArrow}`} onClick={() => increaseSliceCounter()}/>
       <Modal modal={modal} setModal={setModal}/>
     </div>
   )

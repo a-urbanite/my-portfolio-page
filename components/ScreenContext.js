@@ -2,6 +2,7 @@ import * as React from 'react'
 
 const ScreenContext = React.createContext();
 
+//context provider hook
 const ScreenContextProvider = ({ children }) => {
 
   const [screen, setScreen] = React.useState(null)
@@ -33,11 +34,8 @@ const ScreenContextProvider = ({ children }) => {
 
 // context consumer hook
 const useScreenContext = () => {
-  // get the context
   const context = React.useContext(ScreenContext);
-  console.log("CONTEXT", context)
 
-  // if `undefined`, throw an error
   if (context === undefined) {
     throw new Error("useScreenContext was used outside of its Provider");
   }
