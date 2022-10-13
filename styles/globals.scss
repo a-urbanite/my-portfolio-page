@@ -13,7 +13,10 @@ $breakpointDesktop: 1000px;
   width: 100vw;
   max-width:100%;
   scroll-snap-align: start;
-
+      // media query for phone
+      @media (max-width: $breakpointTablet){
+        scroll-snap-align: unset;
+      }
 }
 
 @mixin horizontalLine {
