@@ -28,6 +28,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+      // media query for phone
+      @media (max-width: $breakpointTablet){
+        width: 100%;
+        margin-right: 4rem;
+      }
 
   .subTitle {
     font-weight: 200;
@@ -38,9 +43,12 @@
 
 .mapBlock {
   width: 45%;
-  // background-color: $midnightBlue;
   margin-block: 2rem;
-  margin-right: 2rem
+  margin-right: 2rem;
+    // media query for phone
+    @media (max-width: $breakpointTablet){
+      display: none;
+    }
 }
 
 .horizontalLine {

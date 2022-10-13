@@ -5,6 +5,11 @@
   padding: 0;
   display: flex;
   flex-direction: column;
+    // media query for phone
+    @media (max-width: $breakpointTablet){
+      // font-size: 2rem;
+      height: 100%;
+    }
 }
 
 .top {
@@ -19,6 +24,10 @@
   height: 70vh;
   background-color: black;
   overflow: visible;
+    // media query for phone
+    @media (max-width: $breakpointTablet){
+      height: 100%;
+    }
 }
 
 .bottom {
