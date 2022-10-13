@@ -28,7 +28,7 @@ const Gallery = ({projects}) => {
   }, [screenContext])
   
   const increaseSliceCounter = () => {
-    if (projects.length < sliceStart+galleryFillCount) return;
+    if (projects.length <= sliceStart+galleryFillCount) return;
     setsliceStart((prev) => prev+galleryFillCount)
   }
 
