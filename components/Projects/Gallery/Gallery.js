@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useContext} from 'react'
+import React, { useState, useEffect, useContext, useRef} from 'react'
 import { FaChevronLeft, FaChevronRight} from 'react-icons/fa'
 import Tilt from 'react-parallax-tilt';
 import ProjectCard from '../ProjectCard/ProjectCard'
 import Modal from '../Modal/Modal';
 import styles from './Gallery.module.scss'
 import { useScreenContext } from '../../ScreenContext';
+import { useSwipeable } from 'react-swipeable';
 
 const Gallery = ({projects}) => {
 
@@ -13,6 +14,12 @@ const Gallery = ({projects}) => {
   const [galleryFillCount, setgalleryFillCount] = useState(null)
   const [sliceStart, setsliceStart] = useState(0)
   const projectsSlice = projects.slice(sliceStart, sliceStart+galleryFillCount)
+
+  
+  const handlers = useSwipeable({
+    onSwipedLeft: (e) => increaseSliceCounter(),
+    onSwipedRight: (e) => decreaseSliceCounter(),
+  });
 
   useEffect(() => {
     if (screenContext == 'desktop') { setgalleryFillCount(6) }
@@ -30,17 +37,20 @@ const Gallery = ({projects}) => {
     setsliceStart((prev) => prev-galleryFillCount)
   }
 
-  useEffect(() => {
-    console.log("project.length", projects.length)
-    console.log("sliceStart", sliceStart)
-    console.log("galleryfillcount", galleryFillCount)
-  }, [sliceStart])
+  // useEffect(() => {
+  //   console.log("project.length", projects.length)
+  //   console.log("sliceStart", sliceStart)
+  //   console.log("galleryfillcount", galleryFillCount)
+  // }, [sliceStart])
   
   
   
   return (
-    <div className={styles.galleryContainer}>
-      <FaChevronLeft className={`${styles.arrowKey} ${sliceStart == 0 && styles.inactiveArrow}`} onClick={() => decreaseSliceCounter()}/>
+    <div className={styles.galleryContainer} {...handlers}>
+      <FaChevronLeft 
+        className={`${styles.arrowKey} ${sliceStart == 0 && styles.inactiveArrow}`} 
+        onClick={() => decreaseSliceCounter()}
+      />
       <Tilt tiltMaxAngleX={1} tiltMaxAngleY={1} tiltReverse>
         <div className={styles.gallery}>
           {projectsSlice.map((project) => {
@@ -48,7 +58,10 @@ const Gallery = ({projects}) => {
           })}
         </div>
       </Tilt>
-      <FaChevronRight className={`${styles.arrowKey} ${projects.length <= sliceStart+galleryFillCount && styles.inactiveArrow}`} onClick={() => increaseSliceCounter()}/>
+      <FaChevronRight 
+        className={`${styles.arrowKey} ${projects.length <= sliceStart+galleryFillCount && styles.inactiveArrow}`} 
+        onClick={() => increaseSliceCounter()}
+      />
       <Modal modal={modal} setModal={setModal}/>
     </div>
   )
