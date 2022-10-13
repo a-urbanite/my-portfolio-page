@@ -19,6 +19,7 @@ const TimeLine = ({timelineEntries}) => {
       // cardLess={true}
       lineWidth={5}
       hideControls={true}
+      flipLayout
       // cardHeight={100}
       borderLessCards={true}
       // disableAutoScrollOnClick={true}
