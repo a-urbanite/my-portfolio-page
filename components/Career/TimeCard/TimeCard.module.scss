@@ -1,7 +1,10 @@
-.container > p {
-  background-color: red;
+@use 'styles/index.scss' as *;
+
+.container {
+  // justify-content: flex-start;
 }
 
 .title {
-  margin-bottom: 1rem ;
+  margin-bottom: 1rem;
+  text-align: left;
 }
