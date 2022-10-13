@@ -1,12 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
 import { Chrono } from "react-chrono";
+import { useScreenContext } from '../../ScreenContext';
 import TimeCard from "../TimeCard/TimeCard";
 import styles from './TimeLine.module.scss'
-import { ScreenContext } from "../../ScreenContext";
 
 const TimeLine = ({timelineEntries}) => {
 
-  const screenContext = useContext(ScreenContext);
+  const screenContext = useScreenContext();
   const sortedTimelineEntries = timelineEntries.sort((a,b) => a.fields.orderNum - b.fields.orderNum)
 
   return (

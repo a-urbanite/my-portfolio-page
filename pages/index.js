@@ -5,8 +5,7 @@ import Career from '../components/Career/Career';
 import Skills from '../components/Skills/Skills';
 import Contact from '../components/Contact/Contact';
 import HamburgerMenu from '../components/HamburgerMenu/HamburgerMenu';
-import { useState, useEffect, createContext } from 'react';
-import { ScreenContext, ScreenContextProvider } from '../components/ScreenContext';
+import { ScreenContextProvider } from '../components/ScreenContext';
 
 export async function getStaticProps() {
   const projectsFetch = contentfulClient.getEntries({

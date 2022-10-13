@@ -4,10 +4,11 @@ import Tilt from 'react-parallax-tilt';
 import ProjectCard from '../ProjectCard/ProjectCard'
 import Modal from '../Modal/Modal';
 import styles from './Gallery.module.scss'
-import { ScreenContext } from '../../ScreenContext';
+import { useScreenContext } from '../../ScreenContext';
 
 const Gallery = ({projects}) => {
-  const screenContext = useContext(ScreenContext);
+
+  const screenContext = useScreenContext();
   const [modal, setModal] = useState({isOpen: false, project: undefined})
   const [galleryFillCount, setgalleryFillCount] = useState(null)
   const [sliceStart, setsliceStart] = useState(0)
@@ -20,11 +21,9 @@ const Gallery = ({projects}) => {
   }, [screenContext])
   
 
-  useEffect(() => {
-    console.log(screenContext)
-  }, [screenContext])
-  
-
+  // useEffect(() => {
+  //   console.log(screenContext)
+  // }, [screenContext])
   
   const increaseSliceCounter = () => {
     if (projects.length < sliceStart+galleryFillCount) return;

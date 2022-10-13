@@ -31,4 +31,18 @@ const ScreenContextProvider = ({ children }) => {
   );
 };
 
-export { ScreenContext, ScreenContextProvider };
+// context consumer hook
+const useScreenContext = () => {
+  // get the context
+  const context = React.useContext(ScreenContext);
+  console.log("CONTEXT", context)
+
+  // if `undefined`, throw an error
+  if (context === undefined) {
+    throw new Error("useScreenContext was used outside of its Provider");
+  }
+
+  return context;
+};
+
+export { ScreenContextProvider, useScreenContext };
