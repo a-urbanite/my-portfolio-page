@@ -7,8 +7,8 @@ import Tilt from 'react-parallax-tilt';
 
 const Intro = ({fileAssets}) => {
 
-  const profilePic = fileAssets.find((asset) => asset.fields.id === "profilePic")
-  const cv = fileAssets.find((asset) => asset.fields.id === "cv")
+  const profilePic = fileAssets.find((asset) => asset.fields.assetTitle === "profilePic")
+  const cv = fileAssets.find((asset) => asset.fields.assetTitle === "cv")
 
   return (
     <div className={styles.container} id="headerSection">
@@ -31,7 +31,7 @@ const Intro = ({fileAssets}) => {
           objectFit='cover'
         />
         <Tilt className={styles.textBox}>
-          <p className={styles.introText}>Enthusiastic Fullstack Dev from Germany with a pivot towards backend. My background in archaeological science has taught me a great deal about managing project schedules and quality standards. I care deeply about functioning teams, well-crafted plans and agile work strategies.</p>
+          <p className={styles.introText}>{profilePic.fields.assetSubtitle}</p>
         </Tilt>
       </div>
     </div>
