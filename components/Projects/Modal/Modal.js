@@ -28,8 +28,10 @@ const Modal = ({modal, setModal}) => {
       onClick={() => setModal({isOpen: false, project: undefined})}
       >
       <div className={styles.content} onClick={(e) => e.stopPropagation()}>
-        <h2 className={styles.contentTitle}>{modal.project?.fields.title}</h2>
-        <CloseButton setModal={setModal}/>
+        <div className={styles.titleBar}>
+          <h2 className={styles.contentTitle}>{modal.project?.fields.title}</h2>
+          <CloseButton setModal={setModal}/>
+        </div>
         <div className={styles.contentText}>{documentToReactComponents(modal.project?.fields.longDescr, options)}</div>
         <div className={styles.buttonBar}>
             {modal.project?.fields?.gitRepoLink && <AnimatedButton 

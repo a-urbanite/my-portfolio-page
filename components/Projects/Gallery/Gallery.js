@@ -15,7 +15,7 @@ const Gallery = ({projects}) => {
   const [sliceStart, setsliceStart] = useState(0)
   const projectsSlice = projects.slice(sliceStart, sliceStart+galleryFillCount)
   
-  const handlers = useSwipeable({
+  const swipeHandlers = useSwipeable({
     onSwipedLeft: (e) => increaseSliceCounter(),
     onSwipedRight: (e) => decreaseSliceCounter(),
   });
@@ -37,7 +37,7 @@ const Gallery = ({projects}) => {
   }
   
   return (
-    <div className={styles.galleryContainer} {...handlers}>
+    <div className={styles.galleryContainer} {...swipeHandlers}>
       <FaChevronLeft 
         className={`${styles.arrowKey} ${sliceStart == 0 && styles.inactiveArrow}`} 
         onClick={() => decreaseSliceCounter()}

@@ -1,5 +1,11 @@
 @use 'styles/index.scss' as *;
 
+.container {
+  position: relative;
+  bottom: 1rem;
+  left: 0.5rem;
+}
+
 $size: 20px;
 $color:  #fff;
 $thickness : 2px;
@@ -39,21 +45,6 @@ $thickness : 2px;
 
 }
 
-.container {
-  position: absolute;
-  top: 3rem;
-  right: 6rem;
-
-    // media query for tablet
-    @media (min-width: calc($breakpointTablet + 1px)) and (max-width: $breakpointDesktop){
-    
-    }
-    // media query for phone
-    @media (max-width: $breakpointTablet){
-      top: 2rem;
-      right: 2rem;
-    }
-}
 
 .btnClose {
   margin: 0;
