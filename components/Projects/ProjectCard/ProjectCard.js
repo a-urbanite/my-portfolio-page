@@ -8,7 +8,10 @@ const ProjectCard = ({project, setModal}) => {
   const [textCardOpen, settextCardOpen] = useState(false)
 
   return (
-    <div className={styles.cardContainer} >
+    <div 
+      className={styles.cardContainer} 
+      onClick={() => setModal({isOpen: true, project: project})}
+      >
         <Image 
           className={styles.banner} 
           src={`https:${project.fields.projectBanner.fields.file.url}`} 
@@ -16,9 +19,7 @@ const ProjectCard = ({project, setModal}) => {
           layout='fill' 
         />
         <Tilt>
-          <div 
-            className={styles.textBox} 
-            onClick={() => setModal({isOpen: true, project: project})}>
+          <div className={styles.textBox} >
             <h3>{project.fields.title}</h3>
             <p>{project.fields.shortDescr}</p>
           </div>

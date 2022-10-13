@@ -26,6 +26,10 @@
   animation-name: fadeIn; 
   animation-timing-function: ease-out; 
 
+  &:hover {
+    cursor: pointer;
+  }
+
     // media query for tablet
     @media (min-width: calc($breakpointTablet + 1px)) and (max-width: $breakpointDesktop){
       width: 48%;
@@ -59,7 +63,7 @@
     opacity: 0.95;
     // display: block;
     // background-color: red;
-    cursor: pointer;
+    
   }
       // media query for tablet
       @media (min-width: calc($breakpointTablet + 1px)) and (max-width: $breakpointDesktop){
