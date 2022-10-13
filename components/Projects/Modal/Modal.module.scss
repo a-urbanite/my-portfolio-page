@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 5rem 2rem 5rem;
+  padding: 3rem;
   position: fixed; /* Stay in place */
   z-index: 100; /* Sit on top */
   left: 0;
@@ -17,7 +17,7 @@
 
     // media query for tablet
     @media (min-width: calc($breakpointTablet + 1px)) and (max-width: $breakpointDesktop){
-      
+      padding: 2rem;
     }
     // media query for phone
     @media (max-width: $breakpointTablet){
@@ -25,22 +25,26 @@
     }
 }
 
-.modalOpen { display: block; }
 .modalClosed { display: none; }
 
 .content {
   background-color: $midnightBlue;
+  
   padding: 3rem;
-  width: 100%;
-  height: 100%;
+  max-height: 100%;
+  width: 80%;
 
     // media query for tablet
     @media (min-width: calc($breakpointTablet + 1px)) and (max-width: $breakpointDesktop){
-    
+      padding: 2rem;
+      max-height: 90%;
+      width: 90%;
     }
     // media query for phone
     @media (max-width: $breakpointTablet){
-      padding: 2rem;
+      padding: 1rem;
+      max-height: 100%;
+      width: 100%;
     }
 }
 
@@ -48,17 +52,18 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-.contentTitle {
-  margin-bottom: 1em;
-  user-select: text;
-  // display: inline;
+  // height: 10%;
+  .contentTitle {
+    margin-bottom: 1em;
+    user-select: text;
+    text-align: left;
+    // display: inline;
+  }
 }
 
 .contentText {
-  height: 79%;
-  max-height: 100%;
+  // height: 79%;
+  max-height: 50vh;
   padding-right: 0.5rem;
   // margin-bottom: 1rem;
   // overflow: hidden;
@@ -90,6 +95,7 @@
 }
 
 .buttonBar {
+  // height: 20%;
   margin-top: 1em;
   column-gap: 1rem;
   display: flex;

@@ -24,7 +24,7 @@ const Modal = ({modal, setModal}) => {
 
   return (
     <div 
-      className={`${styles.background} ${modal.isOpen ? styles.modalOpen : styles.modalClosed}`} 
+      className={`${styles.background} ${!modal.isOpen && styles.modalClosed}`} 
       onClick={() => setModal({isOpen: false, project: undefined})}
       >
       <div className={styles.content} onClick={(e) => e.stopPropagation()}>
