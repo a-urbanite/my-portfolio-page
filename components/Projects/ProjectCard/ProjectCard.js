@@ -4,12 +4,12 @@ import Tilt from 'react-parallax-tilt';
 import { useModalContext } from '../../ModalContext';
 
 const ProjectCard = ({project}) => {
-  const {setModal} = useModalContext()
+  const { activateModal } = useModalContext()
 
   return (
     <div 
       className={styles.cardContainer} 
-      onClick={() => setModal({isOpen: true, project: project})}
+      onClick={() => activateModal('projects', project)}
       >
         <Image 
           className={styles.banner} 

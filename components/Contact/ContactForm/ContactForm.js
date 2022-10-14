@@ -3,22 +3,28 @@ import AnimatedButton from '../../AnimatedButton/AnimatedButton'
 import { useForm } from "react-hook-form";
 import emailjs from 'emailjs-com';
 import styles from './ContactForm.module.scss'
+import { useModalContext } from '../../ModalContext'
 
 const ContactForm = () => {
+  const { activateModal, deactivateModal } = useModalContext()
   const formRef = useRef(null);
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = () => {
 
-  try {
-    emailjs.sendForm(process.env.EMAILJS_SERVICE_ID, process.env.EMAILJS_TEMPLATE_ID, formRef.current, process.env.EMAILJS_PUBLIC_KEY)
-      .then((result) => {
-          console.log(result)
-      }, (error) => {
-          console.log(error.text);
-      });
-    } catch (error) {
-      console.log(error)
-    }
+  const onSubmit = () => {
+    activateModal('contact', 'sending...')
+
+    try {
+      emailjs.sendForm(process.env.EMAILJS_SERVICE_ID, process.env.EMAILJS_TEMPLATE_ID, formRef.current, process.env.EMAILJS_PUBLIC_KEY)
+        .then((result) => {
+            activateModal('contact', 'Message sent! thank you!')
+            setTimeout(() => {
+              deactivateModal()
+            }, 2000);
+        });
+      } catch (error) {
+        activateModal('contact', 'Oh no! Something went wrong...')
+        console.log(error)
+      }
 
   };
 

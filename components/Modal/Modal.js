@@ -8,12 +8,11 @@ import CloseButton from '../Projects/CloseButton/CloseButton';
 import { useModalContext } from '../ModalContext';
 
 const Modal = () => {
-  const {modal, setModal} = useModalContext()
+  const {modal, deactivateModal} = useModalContext()
 
   const options = {
     renderNode: {
       [INLINES.HYPERLINK]: (node) => {
-        // console.log(node)
         return <a href={node.data.uri} target={'_blank'} rel="noreferrer">{node.content[0].value}</a>;
       }
     }
@@ -23,32 +22,50 @@ const Modal = () => {
     modal.isOpen ? ( document.body.style.overflow = 'hidden' ) : ( document.body.style.overflow = 'unset' );
  }, [modal.isOpen]);
 
+ if (modal.context === 'projects') {
+   return (
+     <div 
+       className={`${styles.background} ${!modal.isOpen && styles.modalClosed}`} 
+       onClick={() => deactivateModal()}
+       >
+       <div className={styles.content} onClick={(e) => e.stopPropagation()}>
+         <div className={styles.titleBar}>
+           <h2 className={styles.contentTitle}>{modal.payload?.fields.title}</h2>
+           <CloseButton/>
+         </div>
+         <div className={styles.contentText}>{documentToReactComponents(modal.payload?.fields.longDescr, options)}</div>
+         <div className={styles.buttonBar}>
+             {modal.payload?.fields?.gitRepoLink && <AnimatedButton 
+               text={'Check the Repo'} 
+               url={modal.payload?.fields?.gitRepoLink}
+               />
+             }
+             {modal.payload?.fields?.liveLink && <AnimatedButton 
+               text={'Live version'} 
+               url={modal.payload?.fields?.liveLink}
+               />
+             }
+         </div>
+       </div>
+     </div>
+   )
+ }
+
+ if (modal.context === 'contact') {
   return (
     <div 
-      className={`${styles.background} ${!modal.isOpen && styles.modalClosed}`} 
-      onClick={() => setModal({isOpen: false, project: undefined})}
-      >
-      <div className={styles.content} onClick={(e) => e.stopPropagation()}>
-        <div className={styles.titleBar}>
-          <h2 className={styles.contentTitle}>{modal.project?.fields.title}</h2>
-          <CloseButton setModal={setModal}/>
-        </div>
-        <div className={styles.contentText}>{documentToReactComponents(modal.project?.fields.longDescr, options)}</div>
-        <div className={styles.buttonBar}>
-            {modal.project?.fields?.gitRepoLink && <AnimatedButton 
-              text={'Check the Repo'} 
-              url={modal.project?.fields?.gitRepoLink}
-              />
-            }
-            {modal.project?.fields?.liveLink && <AnimatedButton 
-              text={'Live version'} 
-              url={modal.project?.fields?.liveLink}
-              />
-            }
-        </div>
+    className={`${styles.background} ${!modal.isOpen && styles.modalClosed}`} 
+    onClick={() => deactivateModal()}
+    >
+    <div className={styles.content} onClick={(e) => e.stopPropagation()}>
+      <div className={styles.titleBar}>
+        <h2 className={styles.contentTitle}>{modal.payload}</h2>
+        <CloseButton setModal={setModal}/>
       </div>
     </div>
+  </div>
   )
+ }
 }
 
 export default Modal
