@@ -78,7 +78,7 @@
   justify-content: center;
   // media query for tablet
   @media (min-width: calc($breakpointTablet + 1px)) and (max-width: $breakpointDesktop){
-    height: 80vh;
+    height: 100vh;
     width: 100%;
   }
   // media query for phone
