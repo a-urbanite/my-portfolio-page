@@ -18,10 +18,11 @@ const TimeLine = ({timelineEntries}) => {
       // itemWidth={"150"}
       // cardLess={true}
       lineWidth={5}
-      hideControls={true}
-      flipLayout
+      hideControls={screenContext == 'mobile' ? true : false}
+      flipLayout={screenContext == 'mobile' ? true : false}
       // cardHeight={100}
       borderLessCards={true}
+      cardPositionHorizontal='TOP'
       // disableAutoScrollOnClick={true}
       // focusActiveItemOnLoad={false}
       showAllCardsHorizontal={true}
@@ -42,7 +43,8 @@ const TimeLine = ({timelineEntries}) => {
         title: '1.4rem',
       }}
       classNames={{
-        card: 'timeCard'
+        card: 'timeCard',
+        title: 'timePoint'
       }}
     >
         {sortedTimelineEntries.map((timeLineEntry, index) => {

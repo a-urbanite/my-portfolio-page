@@ -2,12 +2,22 @@
   left:auto !important
 }
 
+#timeline-main-wrapper > div {
+  /* background-color: red; */
+  /* overflow: visible; */
+}
+
+.timePoint {
+  /* background-color: red; */
+  overflow: visible !important;
+}
+
 .timeCard {
   background-color: rgb(226, 92, 197);
   margin: 1rem !important;
   border-radius: 0% !important;
   width: auto !important;
-  max-height: 280px;
+  height: 240px;
 }
 
 .timeCard > div > div > p {
@@ -26,7 +36,8 @@
   transform: scale(1.07);
 }
 
-#timeline-main-wrapper {
-  padding: 0 !important;
+/* selector for background of button bar */
+#timeline-main-wrapper + div > div > ul {
+  background-color: transparent;
 }
 
