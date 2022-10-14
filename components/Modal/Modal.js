@@ -3,16 +3,17 @@ import styles from './Modal.module.scss'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { INLINES } from '@contentful/rich-text-types'
 // import { FaGithubSquare, FaLinkedin } from 'react-icons/fa'
-import AnimatedButton from '../../AnimatedButton/AnimatedButton';
-import CloseButton from '../CloseButton/CloseButton';
+import AnimatedButton from '../AnimatedButton/AnimatedButton';
+import CloseButton from '../Projects/CloseButton/CloseButton';
+import { useModalContext } from '../ModalContext';
 
-
-const Modal = ({modal, setModal}) => {
+const Modal = () => {
+  const {modal, setModal} = useModalContext()
 
   const options = {
     renderNode: {
       [INLINES.HYPERLINK]: (node) => {
-        console.log(node)
+        // console.log(node)
         return <a href={node.data.uri} target={'_blank'} rel="noreferrer">{node.content[0].value}</a>;
       }
     }

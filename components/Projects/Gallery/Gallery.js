@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext, useRef} from 'react'
 import { FaChevronLeft, FaChevronRight} from 'react-icons/fa'
 import Tilt from 'react-parallax-tilt';
 import ProjectCard from '../ProjectCard/ProjectCard'
-import Modal from '../Modal/Modal';
 import styles from './Gallery.module.scss'
 import { useScreenContext } from '../../ScreenContext';
 import { useSwipeable } from 'react-swipeable';
@@ -10,7 +9,6 @@ import { useSwipeable } from 'react-swipeable';
 const Gallery = ({projects}) => {
 
   const screenContext = useScreenContext();
-  const [modal, setModal] = useState({isOpen: false, project: undefined})
   const [galleryFillCount, setgalleryFillCount] = useState(null)
   const [sliceStart, setsliceStart] = useState(0)
   const projectsSlice = projects.slice(sliceStart, sliceStart+galleryFillCount)
@@ -45,7 +43,7 @@ const Gallery = ({projects}) => {
       <Tilt tiltMaxAngleX={1} tiltMaxAngleY={1} tiltReverse>
         <div className={styles.gallery}>
           {projectsSlice.map((project) => {
-            return <ProjectCard key={Math.random()} project={project} setModal={setModal}/>
+            return <ProjectCard key={Math.random()} project={project}/>
           })}
         </div>
       </Tilt>
@@ -53,7 +51,6 @@ const Gallery = ({projects}) => {
         className={`${styles.arrowKey} ${projects.length <= sliceStart+galleryFillCount && styles.inactiveArrow}`} 
         onClick={() => increaseSliceCounter()}
       />
-      <Modal modal={modal} setModal={setModal}/>
     </div>
   )
 }

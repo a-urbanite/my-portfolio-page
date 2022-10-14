@@ -5,7 +5,9 @@ import Career from '../components/Career/Career';
 import Skills from '../components/Skills/Skills';
 import Contact from '../components/Contact/Contact';
 import HamburgerMenu from '../components/HamburgerMenu/HamburgerMenu';
+import Modal from '../components/Modal/Modal';
 import { ScreenContextProvider } from '../components/ScreenContext';
+import { ModalContextProvider } from '../components/ModalContext';
 
 export async function getStaticProps() {
   const projectsFetch = contentfulClient.getEntries({
@@ -24,7 +26,6 @@ export async function getStaticProps() {
     content_type: "skillSet",
   });
 
-  
 
   const [projects, fileAssets, timelineEntries, skillSets] =
     await Promise.all([
@@ -47,13 +48,16 @@ export async function getStaticProps() {
 export default function Home({projects, fileAssets, timelineEntries, skillSets}) {
 
   return (
-    <ScreenContextProvider>
-      <HamburgerMenu/>
-      <Intro fileAssets={fileAssets}/>
-      <Projects projects={projects}/>
-      <Career timelineEntries={timelineEntries}/>
-      <Skills skillSets={skillSets}/>
-      <Contact/>
-    </ScreenContextProvider>
+    <ModalContextProvider>
+      <ScreenContextProvider>
+        <HamburgerMenu/>
+        <Intro fileAssets={fileAssets}/>
+        <Projects projects={projects}/>
+        <Career timelineEntries={timelineEntries}/>
+        <Skills skillSets={skillSets}/>
+        <Contact/>
+        <Modal/>
+      </ScreenContextProvider>
+    </ModalContextProvider>
   )
 }

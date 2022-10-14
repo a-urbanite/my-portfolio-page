@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
 import styles from './ProjectCard.module.scss'
 import Image from 'next/image'
 import Tilt from 'react-parallax-tilt';
+import { useModalContext } from '../../ModalContext';
 
-const ProjectCard = ({project, setModal}) => {
-
-  const [textCardOpen, settextCardOpen] = useState(false)
+const ProjectCard = ({project}) => {
+  const {setModal} = useModalContext()
 
   return (
     <div 
