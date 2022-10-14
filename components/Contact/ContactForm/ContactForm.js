@@ -18,7 +18,7 @@ const ContactForm = () => {
         .then((result) => {
             activateModal('contact', 'Message sent! thank you!')
             setTimeout(() => {
-              deactivateModal()
+              // deactivateModal()
             }, 2000);
         });
       } catch (error) {
