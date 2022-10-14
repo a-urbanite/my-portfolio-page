@@ -12,8 +12,8 @@ html {
 }
 
 body {
-  background-color: black;
-  color: beige;
+  background-color: rgb(27, 27, 27);
+  color: rgb(240,234,214);
   position: relative;
 }
 

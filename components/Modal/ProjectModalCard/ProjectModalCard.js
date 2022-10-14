@@ -11,7 +11,8 @@ const ProjectModalCard = () => {
   const options = {
     renderNode: {
       [INLINES.HYPERLINK]: (node) => {
-        return <a href={node.data.uri} target={'_blank'} rel="noreferrer">{node.content[0].value}</a>;
+        console.log(node)
+        return <a target="_blank" rel="noopener noreferrer" href={node.data.uri} >{node.content[0].value}</a>;
       }
     }
   }

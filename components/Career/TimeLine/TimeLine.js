@@ -30,10 +30,10 @@ const TimeLine = ({timelineEntries}) => {
       cardHeight={150}
       theme={{
         primary: "rgb(226, 92, 197)",  //color of line and points, outline frame of timecard, color of card subtitle
-        secondary: "black",   //background of timeItem and timepoint while focussed
+        secondary: "rgb(27, 27, 27)",   //background of timeItem and timepoint while focussed
         cardBgColor: "",  //timecard background color
-        cardForeColor: "pink", //color of card title
-        titleColor: "white", //color of timepoint titles
+        cardForeColor: "", //color of card title
+        titleColor: "rgb(240,234,214)", //color of timepoint titles
         titleColorActive: 'rgb(226, 92, 197)', //color of timepoint titles when focussed
       }}
       fontSizes={{

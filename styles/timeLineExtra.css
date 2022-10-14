@@ -20,6 +20,10 @@
   height: 240px;
 }
 
+.timeCard > div > div > p, h2, li {
+  /* color: rgb(27, 27, 27); */
+}
+
 .timeCard > div > div > p {
   margin-bottom: 1rem;
 }
