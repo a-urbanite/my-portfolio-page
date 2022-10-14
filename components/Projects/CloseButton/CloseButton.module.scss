@@ -1,9 +1,9 @@
 @use 'styles/index.scss' as *;
 
 .container {
-  position: relative;
-  bottom: 1rem;
-  left: 0.5rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 $size: 20px;

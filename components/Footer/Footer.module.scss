@@ -1,0 +1,22 @@
+@use 'styles/index.scss' as *;
+
+.container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $midnightBlue;
+  color: $bonemarrow;
+  text-align: center;
+}
+
+.button {
+  &:hover {
+    color: $interactivePink;
+    cursor: pointer;
+  }
+}

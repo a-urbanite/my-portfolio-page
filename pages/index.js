@@ -6,6 +6,7 @@ import Skills from '../components/Skills/Skills';
 import Contact from '../components/Contact/Contact';
 import HamburgerMenu from '../components/HamburgerMenu/HamburgerMenu';
 import Modal from '../components/Modal/Modal';
+import Footer from '../components/Footer/Footer';
 import { ScreenContextProvider } from '../components/ScreenContext';
 import { ModalContextProvider } from '../components/ModalContext';
 
@@ -50,13 +51,14 @@ export default function Home({projects, fileAssets, timelineEntries, skillSets})
   return (
     <ModalContextProvider>
       <ScreenContextProvider>
-        <HamburgerMenu/>
-        <Intro fileAssets={fileAssets}/>
-        <Projects projects={projects}/>
-        <Career timelineEntries={timelineEntries}/>
-        <Skills skillSets={skillSets}/>
-        <Contact/>
-        <Modal/>
+          <HamburgerMenu/>
+          <Intro fileAssets={fileAssets}/>
+          <Projects projects={projects}/>
+          <Career timelineEntries={timelineEntries}/>
+          <Skills skillSets={skillSets}/>
+          <Contact/>
+          <Footer/>
+          <Modal/>
       </ScreenContextProvider>
     </ModalContextProvider>
   )

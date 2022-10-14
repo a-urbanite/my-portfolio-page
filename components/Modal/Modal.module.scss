@@ -27,8 +27,9 @@
 
 .modalClosed { display: none; }
 
-.content {
+.largeContent {
   background-color: $midnightBlue;
+  position: relative;
   
   padding: 3rem;
   max-height: 100%;
@@ -48,17 +49,26 @@
     }
 }
 
-.titleBar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  // height: 10%;
-  .contentTitle {
-    margin-bottom: 1em;
-    user-select: text;
-    text-align: left;
-    // display: inline;
-  }
+.smallContent {
+  background-color: $midnightBlue;
+  position: relative;
+  
+  padding: 3rem;
+  max-height: 100%;
+  width: 50%;
+
+      // media query for tablet
+      @media (min-width: calc($breakpointTablet + 1px)) and (max-width: $breakpointDesktop){
+        padding: 2rem;
+        max-height: 90%;
+        width: 60%;
+      }
+      // media query for phone
+      @media (max-width: $breakpointTablet){
+        padding: 2rem;
+        max-height: 100%;
+        width: 90%;
+      }
 }
 
 

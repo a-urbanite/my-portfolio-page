@@ -6,6 +6,7 @@ $breakpointTablet: 700px;
 $breakpointDesktop: 1000px;
 
 @mixin main-section {
+  position: relative;
   display: flex;
   flex-direction: row;
   padding: 3rem;

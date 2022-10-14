@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
-import styles from './Modal.module.scss'
-import TextBlock from './TextBlock/TextBlock';
-import ButtonBar from './ButtonBar/Buttonbar';
 import CloseButton from '../Projects/CloseButton/CloseButton';
+import ProjectModalCard from './ProjectModalCard/ProjectModalCard';
 import { useModalContext } from '../ModalContext';
+import styles from './Modal.module.scss'
 
 const Modal = () => {
   const {modal, deactivateModal} = useModalContext()
@@ -17,15 +16,12 @@ const Modal = () => {
         className={`${styles.background} ${!modal.isOpen && styles.modalClosed}`} 
         onClick={() => deactivateModal()}
       >
-        <div className={styles.content} onClick={(e) => e.stopPropagation()}>
-          <div className={styles.titleBar}>
-            <h2 className={styles.contentTitle}>
-              {modal.context === 'projects' ?  modal.payload.fields.title : modal.payload}
-            </h2>
-            <CloseButton/>
-          </div>
-          {modal.context === 'projects' && <TextBlock modal={modal}/>}
-          {modal.context === 'projects' && <ButtonBar modal={modal}/>}
+        <div 
+          className={ modal.context === 'projects' ? styles.largeContent : styles.smallContent} 
+          onClick={(e) => e.stopPropagation()}
+        >
+          <CloseButton/>
+          {modal.context === 'projects' ? <ProjectModalCard/> : modal.payload}
         </div>
       </div>
     )
