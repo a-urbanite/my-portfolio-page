@@ -1,8 +1,10 @@
 import React, { Suspense } from 'react'
 import styles from './Career.module.scss'
 import Timeline from './TimeLine/TimeLine'
+import { useScreenContext } from '../ScreenContext'
 
 const Career = ({timelineEntries}) => {
+  const screenContext = useScreenContext();
 
   return (
     <div className={styles.container} id="timelineSection">
@@ -12,8 +14,7 @@ const Career = ({timelineEntries}) => {
       <div className={styles.middle}>
         <Timeline timelineEntries={timelineEntries}/>
       </div>
-      <div className={styles.bottom}>
-      </div>
+      {screenContext !== 'mobile' && <div className={styles.bottom}></div>}
     </div>
   )
 }

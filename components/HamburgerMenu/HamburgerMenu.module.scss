@@ -27,10 +27,24 @@
   font-size: larger;
   margin-bottom: 1rem;
   border: 1px solid white;
-  padding: 0.5rem 1rem 0.5rem 1rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
   &:hover {
     cursor: pointer;
     // color: $midnightBlue;
     scale: 1.1;
   }
+}
+
+.enterTrans {
+  // transition duration-100 ease-out;
+  transition-timing-function: ease-out;
+  transition-duration: 4000;
+}
+
+.enterFromTrans {
+  transform: scale(0.55);
+}
+
+.enterToTrans {
+  transform: scale(1);
 }
