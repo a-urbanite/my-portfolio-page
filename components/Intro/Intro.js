@@ -19,8 +19,8 @@ const Intro = ({fileAssets}) => {
           
         <div className={styles.iconBar}>
           <AnimatedButton text={'Download CV'} url={`https:${cv.fields.asset.fields.file.url}`}></AnimatedButton>
-          <a href='https://github.com/a-urbanite' target='blank'><FaGithubSquare className={styles.icon} /></a>
-          <a href='https://www.linkedin.com/in/alexander-staedtler/' target='blank'><FaLinkedin className={styles.icon} /></a>
+          <a href='https://github.com/a-urbanite' target='_blank' rel="noreferrer"><FaGithubSquare className={styles.icon} /></a>
+          <a href='https://www.linkedin.com/in/alexander-staedtler/' target='_blank' rel="noreferrer"><FaLinkedin className={styles.icon} /></a>
         </div>
       </div>
       <div className={styles.imageBlock}>
